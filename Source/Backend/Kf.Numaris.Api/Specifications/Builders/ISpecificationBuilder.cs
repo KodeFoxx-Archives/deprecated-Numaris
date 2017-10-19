@@ -1,9 +1,10 @@
 ﻿namespace Kf.Numaris.Api.Specifications.Builders
 {
-    public interface ISpecificationBuilder<TSpecification>
+    public interface ISpecificationBuilder<TSpecification, TSpecificationBuilder>
         where TSpecification : ISpecification
+        where TSpecificationBuilder : ISpecificationBuilder<TSpecification, TSpecificationBuilder>
     {
-        ISpecificationBuilder<TSpecification> WithName(string name);
+        TSpecificationBuilder WithName(string name);
         TSpecification Build();
     }
 }

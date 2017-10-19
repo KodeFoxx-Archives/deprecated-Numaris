@@ -10,9 +10,9 @@ namespace Kf.Numaris.Api.Tests
 {
     public class CodeSanityChecks
     {
-        private static string _numarisApiNamespace = "Kf.Numaris.Api";
-        private static string _numarisApiSpecificationsNamespace = $"{_numarisApiNamespace}.Specifications";
-        private static string _numarisApSpecificationsConcreteNamespace = $"{_numarisApiSpecificationsNamespace}.Concrete";
+        private static readonly string _numarisApiNamespace = "Kf.Numaris.Api";
+        private static readonly string _numarisApiSpecificationsNamespace = $"{_numarisApiNamespace}.Specifications";
+        private static readonly string _numarisApSpecificationsConcreteNamespace = $"{_numarisApiSpecificationsNamespace}.Concrete";
 
         public static IEnumerable<Type> GetTypesInSpecificationsNamespace()
             => Assembly.Load(_numarisApiNamespace).GetTypes()
