@@ -32,11 +32,11 @@ namespace Kf.Numaris.Api.Specifications.Concrete
                             return splitted;
                     }
 
-                    if (input.Length > 3)
+                    if (input.Length > 2)
                     {
                         return new[] {
-                            input[0].ToString(),
-                            String.Join(String.Empty, input.Skip(1))
+                            input.Substring(0, input.Length-2),
+                            String.Join(String.Empty, input.Skip(input.Length-2))
                         };
                     }
 
