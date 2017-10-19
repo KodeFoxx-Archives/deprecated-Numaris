@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Kf.Numaris.Api.Specifications.Concrete
 {
@@ -18,6 +20,28 @@ namespace Kf.Numaris.Api.Specifications.Concrete
         {
             return NumberSpecification
                 .New()
+                .WithParseAlgorithm(input =>
+                {
+                    if (String.IsNullOrWhiteSpace(input))
+                        return new List<string>().ToArray();
+
+                    if (input.Contains("-"))
+                    {
+                        var splitted = input.Split(new[] { "-" }, StringSplitOptions.None);
+                        if (splitted.Length == 2)
+                            return splitted;
+                    }
+
+                    if (input.Length > 3)
+                    {
+                        return new[] {
+                            input[0].ToString(),
+                            String.Join(String.Empty, input.Skip(1))
+                        };
+                    }
+
+                    throw new ArgumentException("Unable to parse given input.");
+                })
                 .WithName(nameof(KdgStudentNumberSpecification))
                 .WithField(FieldSpecification.New()
                     .WithName(KdgStudentNumberSpecificationFields.StudentNumber)
