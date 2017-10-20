@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using Kf.Numaris.Api.Implementations.KdgStudentNumber;
 using Kf.Numaris.Api.Parsing;
+using Kf.Numaris.Implementations.KdgStudentNumber;
 using Xunit;
 
-namespace Kf.Numaris.Api.Tests.Implementations.KdgStudentNumber
+namespace Kf.Numaris.Implementations.Tests.KdgStudentNumber
 {
     public class KdgStudentNumberParserTests
     {

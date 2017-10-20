@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Kf.Numaris.Api.Parsing;
 
-namespace Kf.Numaris.Api.Implementations.KdgStudentNumber
+namespace Kf.Numaris.Implementations.KdgStudentNumber
 {
     public sealed class KdgStudentNumberParser : NumberParser<KdgStudentNumberSpecification>
     {
