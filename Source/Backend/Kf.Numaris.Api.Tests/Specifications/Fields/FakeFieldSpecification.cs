@@ -5,5 +5,6 @@ namespace Kf.Numaris.Api.Tests.Specifications.Fields
 {
     public sealed class FakeFieldSpecification : FieldSpecification<FakeNumberSpecification>
     {
+        public override int Order => 1;
     }
 }

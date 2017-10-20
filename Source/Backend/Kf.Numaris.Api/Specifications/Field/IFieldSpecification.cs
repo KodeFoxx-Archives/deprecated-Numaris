@@ -6,5 +6,6 @@ namespace Kf.Numaris.Api.Specifications.Field
         where TNumberSpecification : ISpecification
     {
         Identifier NumberSpecificationIdentifier { get; }
+        int Order { get; }
     }
 }
