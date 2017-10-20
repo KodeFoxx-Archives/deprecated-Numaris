@@ -2,6 +2,6 @@
 {
     public abstract class NumberSpecification : INumberSpecification
     {
-        public NumberType NumberType => NumberType.FromNumberSpecification();
+        public NumberType NumberType => NumberType.FromNumberSpecification(GetType());
     }
 }

@@ -18,13 +18,13 @@ namespace Kf.Numaris.Api.Common
             var exceptionMessage = new StringBuilder();
 
             if (message != null)
-                exceptionMessage.Append("The interface used in the calling member is not supported");
+                exceptionMessage.Append("The interface used in the calling member is not supported.");
             else
                 exceptionMessage.Append(message);
 
             if (supportedInterfaces != null && supportedInterfaces.Length > 0)
                 exceptionMessage.Append(
-                    $". The interfaces supported are {String.Join(", ", supportedInterfaces.Select(t => t.Name))}."
+                    $"The interfaces supported are {String.Join(", ", supportedInterfaces.Select(t => t.Name))}."
                 );
 
             return exceptionMessage.ToString();

@@ -8,11 +8,9 @@ namespace Kf.Numaris.Api.Tests.Specifications.Numbers
         [Fact]
         public void Shows_correct_NumberType()
         {
-            var expected = new NumberType(typeof(NumberSpecification));
-            var sut = new TestNumberSpecification();
+            var expected = new NumberType(typeof(FakeNumberSpecification));
+            var sut = new FakeNumberSpecification();
             Assert.Equal(expected, sut.NumberType);
         }
     }
-
-    class TestNumberSpecification : NumberSpecification { }
 }

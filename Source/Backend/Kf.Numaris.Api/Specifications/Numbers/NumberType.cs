@@ -7,12 +7,10 @@ namespace Kf.Numaris.Api.Specifications.Numbers
 {
     public class NumberType
     {
-        internal static NumberType FromNumberSpecification()
+        internal static NumberType FromNumberSpecification(Type type)
         {
-            var stackTrace = new StackTrace();
-            var callingType = stackTrace.GetFrame(1).GetMethod().DeclaringType;
-            if (callingType.GetInterfaces().Contains(typeof(INumberSpecification)))
-                return new NumberType(callingType);
+            if (type.GetInterfaces().Contains(typeof(INumberSpecification)))
+                return new NumberType(type);
 
             throw new UnsupportedInterfaceException(supportedInterfaces: typeof(INumberSpecification));
         }
@@ -22,7 +20,7 @@ namespace Kf.Numaris.Api.Specifications.Numbers
 
         internal NumberType(Type type) : this(
             id: type.FullName,
-            name: type.FullName)
+            name: type.Name)
         { }
 
         internal NumberType(string id, string name)
