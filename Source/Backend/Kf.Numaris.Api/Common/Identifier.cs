@@ -5,12 +5,12 @@ namespace Kf.Numaris.Api.Common
 {
     public sealed class Identifier
     {
-        internal static Identifier FromType<TType>(Type type)
+        internal static Identifier For<TSupportedType>(Type type)
         {
-            if (type.GetInterfaces().Contains(typeof(TType)))
+            if (type.GetInterfaces().Contains(typeof(TSupportedType)))
                 return new Identifier(type);
 
-            throw new UnsupportedInterfaceException(supportedInterfaces: typeof(TType));
+            throw new UnsupportedInterfaceException(supportedInterfaces: typeof(TSupportedType));
         }
 
         public string Id { get; }

@@ -5,6 +5,6 @@ namespace Kf.Numaris.Api.Specifications.Numbers
     public abstract class NumberSpecification : INumberSpecification
     {
         public Identifier Identifier
-            => Identifier.FromType<INumberSpecification>(GetType());
+            => Identifier.For<INumberSpecification>(GetType());
     }
 }

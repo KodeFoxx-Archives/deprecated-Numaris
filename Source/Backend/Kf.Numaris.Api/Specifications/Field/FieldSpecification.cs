@@ -7,9 +7,9 @@ namespace Kf.Numaris.Api.Specifications.Field
         where TNumberSpecification : INumberSpecification
     {
         public Identifier Identifier
-            => Identifier.FromType<IFieldSpecification<TNumberSpecification>>(GetType());
+            => Identifier.For<IFieldSpecification<TNumberSpecification>>(GetType());
 
         public Identifier NumberSpecificationIdentifier
-            => Identifier.FromType<INumberSpecification>(typeof(TNumberSpecification));
+            => Identifier.For<INumberSpecification>(typeof(TNumberSpecification));
     }
 }

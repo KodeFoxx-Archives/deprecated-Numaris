@@ -27,7 +27,7 @@ namespace Kf.Numaris.Api.Tests.Common
         {
             var exception = Assert.Throws<UnsupportedInterfaceException>(() =>
             {
-                Identifier.FromType<INumberSpecification>(GetType());
+                Identifier.For<INumberSpecification>(GetType());
             });
 
             Assert.Equal("The interfaces supported are INumberSpecification.", exception.Message);
