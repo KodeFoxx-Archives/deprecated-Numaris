@@ -9,8 +9,8 @@ namespace Kf.Numaris.Api.Tests.Specifications.Numbers
         [Fact]
         public void Shows_correct_identifier()
         {
-            var expected = new Identifier(typeof(FakeFieldSpecification));
-            var sut = new FakeFieldSpecification();
+            var expected = new Identifier(typeof(FakeFieldSpecificationOne));
+            var sut = new FakeFieldSpecificationOne();
             Assert.Equal(expected, sut.Identifier);
         }
     }
