@@ -1,7 +1,10 @@
-﻿namespace Kf.Numaris.Api.Specifications.Numbers
+﻿using Kf.Numaris.Api.Common;
+
+namespace Kf.Numaris.Api.Specifications.Numbers
 {
     public abstract class NumberSpecification : INumberSpecification
     {
-        public NumberType NumberType => NumberType.FromNumberSpecification(GetType());
+        public Identifier Identifier
+            => Identifier.FromType<INumberSpecification>(GetType());
     }
 }

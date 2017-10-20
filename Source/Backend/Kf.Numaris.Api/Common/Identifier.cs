@@ -1,29 +1,27 @@
 ﻿using System;
-using System.Diagnostics;
 using System.Linq;
-using Kf.Numaris.Api.Common;
 
-namespace Kf.Numaris.Api.Specifications.Numbers
+namespace Kf.Numaris.Api.Common
 {
-    public class NumberType
+    public sealed class Identifier
     {
-        internal static NumberType FromNumberSpecification(Type type)
+        internal static Identifier FromType<TType>(Type type)
         {
-            if (type.GetInterfaces().Contains(typeof(INumberSpecification)))
-                return new NumberType(type);
+            if (type.GetInterfaces().Contains(typeof(TType)))
+                return new Identifier(type);
 
-            throw new UnsupportedInterfaceException(supportedInterfaces: typeof(INumberSpecification));
+            throw new UnsupportedInterfaceException(supportedInterfaces: typeof(TType));
         }
 
         public string Id { get; }
         public string Name { get; }
 
-        internal NumberType(Type type) : this(
+        internal Identifier(Type type) : this(
             id: type.FullName,
             name: type.Name)
         { }
 
-        internal NumberType(string id, string name)
+        internal Identifier(string id, string name)
         {
             Id = id;
             Name = name;
@@ -37,7 +35,7 @@ namespace Kf.Numaris.Api.Specifications.Numbers
             if (ReferenceEquals(this, obj))
                 return true;
 
-            if (!(obj is NumberType other))
+            if (!(obj is Identifier other))
                 return false;
 
             return other.GetHashCode() == GetHashCode();

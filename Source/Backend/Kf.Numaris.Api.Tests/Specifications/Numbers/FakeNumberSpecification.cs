@@ -2,7 +2,7 @@
 
 namespace Kf.Numaris.Api.Tests.Specifications.Numbers
 {
-    public class FakeNumberSpecification : NumberSpecification
+    public sealed class FakeNumberSpecification : NumberSpecification
     {
     }
 }

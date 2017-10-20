@@ -1,23 +1,25 @@
 ﻿using Kf.Numaris.Api.Common;
 using Kf.Numaris.Api.Specifications.Numbers;
+using Kf.Numaris.Api.Tests.Specifications.Fields;
+using Kf.Numaris.Api.Tests.Specifications.Numbers;
 using Xunit;
 
-namespace Kf.Numaris.Api.Tests.Specifications.Numbers
+namespace Kf.Numaris.Api.Tests.Common
 {
-    public class NumberTypeTests
+    public class IdentifierTests
     {
         [Fact]
         public void Sets_Id_to_FullName_of_calling_type()
         {
-            var sut = new FakeNumberSpecification();
-            Assert.Equal(typeof(FakeNumberSpecification).FullName, sut.NumberType.Id);
+            var sut = new FakeFieldSpecification();
+            Assert.Equal(typeof(FakeFieldSpecification).FullName, sut.Identifier.Id);
         }
 
         [Fact]
         public void Sets_Name_to_Name_of_calling_type()
         {
-            var sut = new FakeNumberSpecification();
-            Assert.Equal(typeof(FakeNumberSpecification).Name, sut.NumberType.Name);
+            var sut = new FakeFieldSpecification();
+            Assert.Equal(typeof(FakeFieldSpecification).Name, sut.Identifier.Name);
         }
 
         [Fact]
@@ -25,7 +27,7 @@ namespace Kf.Numaris.Api.Tests.Specifications.Numbers
         {
             var exception = Assert.Throws<UnsupportedInterfaceException>(() =>
             {
-                NumberType.FromNumberSpecification(GetType());
+                Identifier.FromType<INumberSpecification>(GetType());
             });
 
             Assert.Equal("The interfaces supported are INumberSpecification.", exception.Message);

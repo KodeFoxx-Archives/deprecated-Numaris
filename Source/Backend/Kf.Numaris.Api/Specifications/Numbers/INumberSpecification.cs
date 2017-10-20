@@ -1,7 +1,6 @@
 ﻿namespace Kf.Numaris.Api.Specifications.Numbers
 {
-    public interface INumberSpecification
+    public interface INumberSpecification : ISpecification
     {
-        NumberType NumberType { get; }
     }
 }

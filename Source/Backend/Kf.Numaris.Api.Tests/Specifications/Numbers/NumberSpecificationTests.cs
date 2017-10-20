@@ -1,4 +1,5 @@
-﻿using Kf.Numaris.Api.Specifications.Numbers;
+﻿using Kf.Numaris.Api.Common;
+using Kf.Numaris.Api.Tests.Specifications.Fields;
 using Xunit;
 
 namespace Kf.Numaris.Api.Tests.Specifications.Numbers
@@ -6,11 +7,11 @@ namespace Kf.Numaris.Api.Tests.Specifications.Numbers
     public class NumberSpecificationTests
     {
         [Fact]
-        public void Shows_correct_NumberType()
+        public void Shows_correct_identifier()
         {
-            var expected = new NumberType(typeof(FakeNumberSpecification));
-            var sut = new FakeNumberSpecification();
-            Assert.Equal(expected, sut.NumberType);
+            var expected = new Identifier(typeof(FakeFieldSpecification));
+            var sut = new FakeFieldSpecification();
+            Assert.Equal(expected, sut.Identifier);
         }
     }
 }
