@@ -1,4 +1,5 @@
 ﻿using Kf.Numaris.Api.Specifications.Field;
+using Kf.Numaris.Implementations.KdgPersonNumber.Numbers;
 
 namespace Kf.Numaris.Implementations.KdgPersonNumber.Fields
 {

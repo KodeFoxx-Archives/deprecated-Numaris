@@ -4,12 +4,12 @@ using Kf.Numaris.Api.Specifications.Numbers;
 
 namespace Kf.Numaris.Api.Formatting.Fields
 {
-    public abstract class FieldFormatter<TFieldSpecification, TNumberSpecification> : IFieldFormatter
+    public abstract class FieldFormatter<TFieldSpecification, TNumberSpecification> : IFieldFormatter<TNumberSpecification>
         where TFieldSpecification : IFieldSpecification<TNumberSpecification>
         where TNumberSpecification : INumberSpecification
     {
         public Identifier Identifier
-            => Identifier.For<IFieldFormatter>(GetType());
+            => Identifier.For<IFieldFormatter<TNumberSpecification>>(GetType());
 
         public Identifier FieldSpecificationIdentifier
             => Identifier.For<IFieldSpecification<TNumberSpecification>>(typeof(TFieldSpecification));

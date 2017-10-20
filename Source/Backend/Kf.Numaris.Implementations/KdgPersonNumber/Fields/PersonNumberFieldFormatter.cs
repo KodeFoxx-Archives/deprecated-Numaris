@@ -1,5 +1,6 @@
 ﻿using System;
 using Kf.Numaris.Api.Formatting.Fields;
+using Kf.Numaris.Implementations.KdgPersonNumber.Numbers;
 
 namespace Kf.Numaris.Implementations.KdgPersonNumber.Fields
 {
