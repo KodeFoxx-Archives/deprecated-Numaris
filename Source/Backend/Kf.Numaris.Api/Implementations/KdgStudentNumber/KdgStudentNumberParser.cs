@@ -1,59 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Security.Cryptography;
+using Kf.Numaris.Api.Parsing;
 
-namespace Kf.Numaris.Api
+namespace Kf.Numaris.Api.Implementations.KdgStudentNumber
 {
-    public interface INumber<TNumber>
-        where TNumber : class, INumber<TNumber>
-    {
-    }
-
-    public abstract class Number<TNumber> : INumber<TNumber>
-        where TNumber : class, INumber<TNumber>
-    {
-        protected readonly INumberParser<TNumber> _numberParser;
-
-        protected Number(INumberParser<TNumber> numberParser)
-            => _numberParser = numberParser ?? throw new ArgumentNullException(nameof(numberParser));
-    }
-
-    public sealed class KdgStudentNumber : Number<KdgStudentNumber>
-    {
-        public KdgStudentNumber(INumberParser<KdgStudentNumber> numberParser)
-            : base(numberParser)
-        {
-        }
-    }
-
-    public interface INumberParser<TNumber>
-        where TNumber : class, INumber<TNumber>
-    {
-        string[] Parse(string input);
-    }
-
-    public abstract class NumberParser<TNumber> : INumberParser<TNumber>
-        where TNumber : class, INumber<TNumber>
-    {
-        protected readonly string _baseExceptionString = $"Unable to parse given input to {typeof(TNumber).Name}.";
-
-        public virtual string[] Parse(string input) =>
-            throw new NotImplementedException($"{typeof(TNumber).Name} needs to have a parser implemented.");
-    }
-
-    public class NumberParserException : Exception
-    {
-        public NumberParserException(Exception exception)
-            : base(exception.Message, exception) { }
-        public NumberParserException(string message)
-            : base(message) { }
-        public NumberParserException(string message, Exception innerException)
-            : base(message, innerException) { }
-    }
-
-    public sealed class KdgStudentNumberParser : NumberParser<KdgStudentNumber>
+    public sealed class KdgStudentNumberParser : NumberParser<KdgStudentNumberSpecification>
     {
         public override string[] Parse(string input)
         {
