@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Linq;
 
 namespace Kf.Numaris.Api.Common
 {
+    [DebuggerDisplay("Name (Id)")]
     public sealed class Identifier
     {
         internal static Identifier For<TSupportedType>(Type type)
@@ -49,5 +51,8 @@ namespace Kf.Numaris.Api.Common
 
             return hash;
         }
+
+        public override string ToString()
+            => $"{Name} ({Id})";
     }
 }

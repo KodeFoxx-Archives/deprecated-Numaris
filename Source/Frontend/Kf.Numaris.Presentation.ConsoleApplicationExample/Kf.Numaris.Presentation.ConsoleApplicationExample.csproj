@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Backend\Kf.Numaris.Api\Kf.Numaris.Api.csproj" />
+    <ProjectReference Include="..\..\Backend\Kf.Numaris.Implementations\Kf.Numaris.Implementations.csproj" />
+  </ItemGroup>
+
+</Project>

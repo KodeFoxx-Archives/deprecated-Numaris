@@ -20,9 +20,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kf.Numaris.Api", "Backend\K
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kf.Numaris.Api.Tests", "Backend\Kf.Numaris.Api.Tests\Kf.Numaris.Api.Tests.csproj", "{FF11C384-FFF8-4186-89ED-968870BBC245}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kf.Numaris.Implementations", "Backend\Kf.Numaris.Implementations\Kf.Numaris.Implementations.csproj", "{CFBA88F4-6DB7-46B7-96F9-FBA2F27D2942}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kf.Numaris.Implementations", "Backend\Kf.Numaris.Implementations\Kf.Numaris.Implementations.csproj", "{CFBA88F4-6DB7-46B7-96F9-FBA2F27D2942}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kf.Numaris.Implementations.Tests", "Backend\Kf.Numaris.Implementations.Tests\Kf.Numaris.Implementations.Tests.csproj", "{1B5E8290-9A37-4AF8-B2A5-C5743E3EF09B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kf.Numaris.Implementations.Tests", "Backend\Kf.Numaris.Implementations.Tests\Kf.Numaris.Implementations.Tests.csproj", "{1B5E8290-9A37-4AF8-B2A5-C5743E3EF09B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Frontend", "Frontend", "{2437A1B0-663B-43C5-9005-748000B49DD8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ConsoleApplication", "ConsoleApplication", "{CE471591-8D31-4CA6-B45F-38F1D7DA690B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kf.Numaris.Presentation.ConsoleApplicationExample", "Frontend\Kf.Numaris.Presentation.ConsoleApplicationExample\Kf.Numaris.Presentation.ConsoleApplicationExample.csproj", "{995A3F64-0851-4439-921A-58561CFA94F6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -46,6 +52,10 @@ Global
 		{1B5E8290-9A37-4AF8-B2A5-C5743E3EF09B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1B5E8290-9A37-4AF8-B2A5-C5743E3EF09B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1B5E8290-9A37-4AF8-B2A5-C5743E3EF09B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{995A3F64-0851-4439-921A-58561CFA94F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{995A3F64-0851-4439-921A-58561CFA94F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{995A3F64-0851-4439-921A-58561CFA94F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{995A3F64-0851-4439-921A-58561CFA94F6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -56,6 +66,9 @@ Global
 		{FF11C384-FFF8-4186-89ED-968870BBC245} = {F3175999-E6D9-4DA3-BBD7-94DBACB95B7B}
 		{CFBA88F4-6DB7-46B7-96F9-FBA2F27D2942} = {F3175999-E6D9-4DA3-BBD7-94DBACB95B7B}
 		{1B5E8290-9A37-4AF8-B2A5-C5743E3EF09B} = {F3175999-E6D9-4DA3-BBD7-94DBACB95B7B}
+		{2437A1B0-663B-43C5-9005-748000B49DD8} = {FD156518-0789-4B32-B21D-521167251A2B}
+		{CE471591-8D31-4CA6-B45F-38F1D7DA690B} = {2437A1B0-663B-43C5-9005-748000B49DD8}
+		{995A3F64-0851-4439-921A-58561CFA94F6} = {CE471591-8D31-4CA6-B45F-38F1D7DA690B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {71302D3A-AB57-4A51-800F-9973B307F8C4}
