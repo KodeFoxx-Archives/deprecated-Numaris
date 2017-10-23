@@ -11,7 +11,13 @@ namespace Kf.Numaris.Implementations
     public abstract class NumarisAutofacModule<TNumberSpecification> : Module
         where TNumberSpecification : INumberSpecification
     {
-        protected override void Load(ContainerBuilder builder)            
+        protected override void Load(ContainerBuilder builder)
+        {
+            LoadGenericNumarisTypes(builder);
+            LoadSpecificTypes(builder);
+        }        
+
+        protected void LoadGenericNumarisTypes(ContainerBuilder builder)            
         {
             builder.RegisterAssemblyTypes(typeof(KdgNumberSpecification).Assembly)
                 .Where(t => t.GetInterfaces().Contains(typeof(INumberFormatter<TNumberSpecification>)))
@@ -27,6 +33,10 @@ namespace Kf.Numaris.Implementations
                 .Where(t => t.GetInterfaces().Contains(typeof(IFieldFormatter<TNumberSpecification>)))
                 .Where(t => t.IsClass)
                 .AsImplementedInterfaces();
+        }
+
+        protected virtual void LoadSpecificTypes(ContainerBuilder builder)
+        {
         }
     }
 }

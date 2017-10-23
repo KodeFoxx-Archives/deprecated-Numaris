@@ -2,7 +2,8 @@
 
 namespace Kf.Numaris.Implementations.KdgPersonNumber
 {
-    public class KdgPersonNumberAutofacModule : NumarisAutofacModule<KdgNumberSpecification>
+    public sealed class KdgPersonNumberAutofacModule 
+        : NumarisAutofacModule<KdgNumberSpecification>
     {
     }
 }
