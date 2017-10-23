@@ -8,6 +8,7 @@ using Autofac.Core;
 using Kf.Numaris.Api.Formatting.Fields;
 using Kf.Numaris.Api.Formatting.Numbers;
 using Kf.Numaris.Api.Specifications.Field;
+using Kf.Numaris.Implementations.KdgPersonNumber;
 using Kf.Numaris.Implementations.KdgPersonNumber.Fields;
 
 namespace Kf.Numaris.Presentation.ConsoleApplicationExample
@@ -28,16 +29,20 @@ namespace Kf.Numaris.Presentation.ConsoleApplicationExample
 
         private static IContainer ConfigureContainer()
         {
-            var builder = new ContainerBuilder();            
+            var builder = new ContainerBuilder();
 
-            // This should be inside a seperate KdgNumberSpecification Module
-            builder.RegisterType<KdgNumberFormatter>().As<INumberFormatter<KdgNumberSpecification>>();
-            builder.RegisterType<CheckDigitsFieldSpecification>().As<IFieldSpecification<KdgNumberSpecification>>();
-            builder.RegisterType<PersonNumberFieldSpecification>().As<IFieldSpecification<KdgNumberSpecification>>();
-            builder.RegisterType<PersonNumberFieldFormatter>().As<IFieldFormatter<KdgNumberSpecification>>();
-            builder.RegisterType<CheckDigitsFieldFormatter>().As<IFieldFormatter<KdgNumberSpecification>>();
+            // 01a. Either specify all wiring here
+            // (but This should be inside a seperate KdgNumberSpecification Module, see below at 01b)
+            //builder.RegisterType<KdgNumberFormatter>().As<INumberFormatter<KdgNumberSpecification>>();
+            //builder.RegisterType<CheckDigitsFieldSpecification>().As<IFieldSpecification<KdgNumberSpecification>>();
+            //builder.RegisterType<PersonNumberFieldSpecification>().As<IFieldSpecification<KdgNumberSpecification>>();
+            //builder.RegisterType<PersonNumberFieldFormatter>().As<IFieldFormatter<KdgNumberSpecification>>();
+            //builder.RegisterType<CheckDigitsFieldFormatter>().As<IFieldFormatter<KdgNumberSpecification>>();
 
-            // This is application specific
+            // 01b. This is how you can load modules with autofac:
+            builder.RegisterAssemblyModules(typeof(KdgNumberSpecification).Assembly);
+
+            // 02. This is application specific wiring
             builder.RegisterType<Program>();
             builder.RegisterAssemblyTypes(typeof(Program).Assembly)
                 .Where(t => t.GetInterfaces().Contains(typeof(IExample)))
