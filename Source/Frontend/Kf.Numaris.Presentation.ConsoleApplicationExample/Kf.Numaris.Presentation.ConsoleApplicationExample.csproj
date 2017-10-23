@@ -6,6 +6,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Autofac" Version="4.6.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Backend\Kf.Numaris.Api\Kf.Numaris.Api.csproj" />
     <ProjectReference Include="..\..\Backend\Kf.Numaris.Implementations\Kf.Numaris.Implementations.csproj" />
   </ItemGroup>
 
