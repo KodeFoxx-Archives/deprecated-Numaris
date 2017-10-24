@@ -9,21 +9,20 @@ namespace Kf.Numaris.Presentation.ConsoleApplicationExample
     class FormattingExample : IExample
     {
         private readonly INumberFormatter<KdgNumberSpecification> _numberFormatter;
-        private readonly List<string[]> _numbers = new List<string[]>
+        private readonly List<string> _numbers = new List<string>
         {
-            new []{ "33311", "4" },
-            new []{ "33311", "40" },
-            new []{ "0033311", "40" }
+            "003331140", "3331140", "140", "33311.40",
+            "  00 3 3 3 11  40"
         };
 
         public FormattingExample(INumberFormatter<KdgNumberSpecification> numberFormatter)
-            => _numberFormatter = numberFormatter;        
+            => _numberFormatter = numberFormatter;
 
         public void Run()
         {
             _numbers.ToList().ForEach(number =>
             {
-                Console.WriteLine($"- {String.Join(" and ", number.Select(n => $"'{n}'"))}' formatted becomes '{_numberFormatter.Format(number)}'.");
+                Console.WriteLine($"- '{number}' formatted becomes '{_numberFormatter.Format(number)}'.");
             });
         }
     }

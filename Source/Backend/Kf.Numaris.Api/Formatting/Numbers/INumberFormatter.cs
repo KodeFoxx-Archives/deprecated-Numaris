@@ -9,5 +9,6 @@ namespace Kf.Numaris.Api.Formatting.Numbers
     {
         IReadOnlyDictionary<int, IFieldFormatter<TNumberSpecification>> FieldFormatters { get; }
         string Format(string[] input);
+        string Format(string input);
     }
 }
