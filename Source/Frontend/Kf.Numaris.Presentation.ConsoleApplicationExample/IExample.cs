@@ -2,6 +2,7 @@
 {
     internal interface IExample
     {
+        string Notes { get; }
         void Run();
     }
 }

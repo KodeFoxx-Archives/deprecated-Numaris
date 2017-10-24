@@ -2,14 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection;
 using Autofac;
-using Autofac.Core;
-using Kf.Numaris.Api.Formatting.Fields;
-using Kf.Numaris.Api.Formatting.Numbers;
-using Kf.Numaris.Api.Specifications.Field;
-using Kf.Numaris.Implementations.KdgPersonNumber;
-using Kf.Numaris.Implementations.KdgPersonNumber.Fields;
 
 namespace Kf.Numaris.Presentation.ConsoleApplicationExample
 {
@@ -20,8 +13,8 @@ namespace Kf.Numaris.Presentation.ConsoleApplicationExample
         static void Main(string[] args)
         {
             var container = ConfigureContainer();
-            var program = container.Resolve<Program>();  
-            
+            var program = container.Resolve<Program>();
+
             program.RunExamples();
 
             Console.ReadKey();
@@ -53,21 +46,26 @@ namespace Kf.Numaris.Presentation.ConsoleApplicationExample
         }
 
         public Program(IEnumerable<IExample> examples)
-            => _examples = examples;        
+            => _examples = examples;
 
         private void RunExamples()
             => _examples.ToList()
                 .ForEach(e =>
-                {                    
+                {
                     ExecuteBeforeExample(e);
                     e.Run();
                     ExecuteAfterExample();
                 });
 
         private void ExecuteBeforeExample(IExample example)
-            => Console.WriteLine($"Running '{example.GetType().Name}'.");
+        {
+            Console.WriteLine($"Running '{example.GetType().Name}'.");
+
+            if (!String.IsNullOrWhiteSpace(example.Notes))
+                Console.WriteLine($"!! [{example.Notes}]");
+        }
 
         private void ExecuteAfterExample(IExample example = null)
-            => Enumerable.Range(0, 2).ToList().ForEach(_ => Console.WriteLine());                
+            => Enumerable.Range(0, 2).ToList().ForEach(_ => Console.WriteLine());
     }
 }
