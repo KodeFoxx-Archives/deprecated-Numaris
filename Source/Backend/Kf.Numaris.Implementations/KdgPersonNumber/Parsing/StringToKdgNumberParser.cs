@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Linq;
 using Kf.Numaris.Api.Parsing.Parsers;
-using Kf.Numaris.Implementations.KdgPersonNumber.Numbers;
+using Kf.Numaris.Implementations.KdgPersonNumber.Specification;
 
-namespace Kf.Numaris.Implementations.KdgPersonNumber.Parsers
+namespace Kf.Numaris.Implementations.KdgPersonNumber.Parsing
 {
     public sealed class StringToKdgNumberParser : StringParser<KdgNumberSpecification>
     {

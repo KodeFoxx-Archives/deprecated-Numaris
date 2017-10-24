@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using Kf.Numaris.Implementations.KdgPersonNumber.Parsers;
+using Kf.Numaris.Implementations.KdgPersonNumber.Parsing;
 using Xunit;
 
 namespace Kf.Numaris.Implementations.Tests.KdgPersonNumber.Parsers

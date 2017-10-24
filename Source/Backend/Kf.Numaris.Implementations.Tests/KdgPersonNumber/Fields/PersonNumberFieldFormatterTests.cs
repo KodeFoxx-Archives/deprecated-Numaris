@@ -1,4 +1,4 @@
-﻿using Kf.Numaris.Implementations.KdgPersonNumber.Fields;
+﻿using Kf.Numaris.Implementations.KdgPersonNumber.Formatting;
 using Xunit;
 
 namespace Kf.Numaris.Implementations.Tests.KdgPersonNumber.Fields

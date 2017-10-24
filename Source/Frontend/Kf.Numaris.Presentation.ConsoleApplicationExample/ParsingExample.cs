@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Kf.Numaris.Api.Parsing.Parsers;
-using Kf.Numaris.Implementations.KdgPersonNumber.Numbers;
+using Kf.Numaris.Implementations.KdgPersonNumber.Specification;
 
 namespace Kf.Numaris.Presentation.ConsoleApplicationExample
 {

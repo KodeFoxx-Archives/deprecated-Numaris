@@ -1,8 +1,8 @@
-﻿using Kf.Numaris.Implementations.KdgPersonNumber.Numbers;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using Autofac;
+using Kf.Numaris.Implementations.KdgPersonNumber.Specification;
 
 namespace Kf.Numaris.Presentation.ConsoleApplicationExample
 {

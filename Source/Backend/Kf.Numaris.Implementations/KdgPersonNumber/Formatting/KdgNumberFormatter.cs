@@ -3,8 +3,9 @@ using Kf.Numaris.Api.Formatting.Fields;
 using Kf.Numaris.Api.Formatting.Numbers;
 using Kf.Numaris.Api.Parsing.Parsers;
 using Kf.Numaris.Api.Specifications.Field;
+using Kf.Numaris.Implementations.KdgPersonNumber.Specification;
 
-namespace Kf.Numaris.Implementations.KdgPersonNumber.Numbers
+namespace Kf.Numaris.Implementations.KdgPersonNumber.Formatting
 {
     public sealed class KdgNumberFormatter : NumberFormatter<KdgNumberSpecification>
     {

@@ -5,7 +5,6 @@ using Kf.Numaris.Api.Formatting.Numbers;
 using Kf.Numaris.Api.Parsing.Parsers;
 using Kf.Numaris.Api.Specifications.Field;
 using Kf.Numaris.Api.Specifications.Numbers;
-using Kf.Numaris.Implementations.KdgPersonNumber.Numbers;
 
 namespace Kf.Numaris.Implementations
 {
@@ -16,9 +15,9 @@ namespace Kf.Numaris.Implementations
         {
             LoadGenericNumarisTypes(builder);
             LoadSpecificTypes(builder);
-        }        
+        }
 
-        protected void LoadGenericNumarisTypes(ContainerBuilder builder)            
+        protected void LoadGenericNumarisTypes(ContainerBuilder builder)
         {
             builder.RegisterAssemblyTypesWithClassImplementations<TNumberSpecification, INumberFormatter<TNumberSpecification>>();
             builder.RegisterAssemblyTypesWithClassImplementations<TNumberSpecification, IFieldSpecification<TNumberSpecification>>();
