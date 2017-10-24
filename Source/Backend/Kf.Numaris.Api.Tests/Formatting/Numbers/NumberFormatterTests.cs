@@ -26,7 +26,8 @@ namespace Kf.Numaris.Api.Tests.Formatting.Numbers
                 },
                 fieldSpecifications: new List<IFieldSpecification<FakeNumberSpecification>> {
                     new FakeFieldSpecificationTwo(), new FakeFieldSpecificationOne()
-                }
+                },
+                stringParser: null
             );
     }
 }

@@ -35,7 +35,8 @@ namespace Kf.Numaris.Implementations.Tests.KdgPersonNumber.Numbers
                     },
                     fieldSpecifications: new List<IFieldSpecification<KdgNumberSpecification>> {
                         new PersonNumberFieldSpecification(), new CheckDigitsFieldSpecification()
-                    }
+                    },
+                    stringParser: null
                 );
     }
 }

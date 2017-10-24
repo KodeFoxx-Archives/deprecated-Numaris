@@ -22,7 +22,7 @@ namespace Kf.Numaris.Api.Formatting.Numbers
         protected NumberFormatter(
             IEnumerable<IFieldFormatter<TNumberSpecification>> fieldFormatters,
             IEnumerable<IFieldSpecification<TNumberSpecification>> fieldSpecifications,
-            IStringParser<TNumberSpecification> stringParser)
+            IStringParser<TNumberSpecification> stringParser = null)
         {
             fieldFormatters = fieldFormatters?.ToList() ?? new List<IFieldFormatter<TNumberSpecification>>();
             FieldFormatters = fieldSpecifications
@@ -36,6 +36,6 @@ namespace Kf.Numaris.Api.Formatting.Numbers
 
         public abstract string Format(string[] input);
         public virtual string Format(string input)
-            => Format(StringParser.Parse(input));
+            => Format(StringParser != null ? StringParser.Parse(input) : new[] { input });
     }
 }
