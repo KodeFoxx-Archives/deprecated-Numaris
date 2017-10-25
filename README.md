@@ -13,13 +13,12 @@ The API is designed for flexible use of Dependency Injection. Every formatter, p
 ## Formatting
 Formatters have a method `Format(string)`. This method first uses the parser defined for the number specification. If there is no number defined it will pass it on the the `Format(string[])` method. The latter method does the formatting work, where it takes each string and formats it accordingly.
 ### Example
-See FormattingExample.cs https://github.com/KodeFoxx/Numaris/blob/master/Source/Frontend/Kf.Numaris.Presentation.ConsoleApplicationExample/FormattingExample.cs
+- See [FormattingExample.cs](https://github.com/KodeFoxx/Numaris/blob/master/Examples/Kf.Numaris.Examples.ConsoleApplication/Implementation/FormattingExample.cs)
 
 ## Parsing
 StringParsers are the parsers that are used intsensively inside the API, although they're optional, if you want to use Formatting for example it is recommended to implement a StringParser for your NumberSpecification. Their purpose is to parse a input string into an array of strings which either a Formatter or Validator can use later on in the process.
 ### Example
-See ParsingExample.cs
-https://github.com/KodeFoxx/Numaris/blob/master/Source/Frontend/Kf.Numaris.Presentation.ConsoleApplicationExample/ParsingExample.cs
+- See [ParsingExample.cs](https://github.com/KodeFoxx/Numaris/blob/master/Examples/Kf.Numaris.Examples.ConsoleApplication/Implementation/ParsingExample.cs)
 
 ## Validation
 Todo
