@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Kf.Numaris.Api.Common;
 using Kf.Numaris.Api.Specifications.Field;
@@ -11,20 +12,35 @@ namespace Kf.Numaris.Api.Validation.Fields
         where TFieldSpecification : IFieldSpecification<TNumberSpecification>
         where TNumberSpecification : INumberSpecification
     {
+
+        private readonly List<KeyValuePair<Identifier, Func<string[], IFieldValidationResult<TNumberSpecification>>>> _fieldDependentValidators =
+            new List<KeyValuePair<Identifier, Func<string[], IFieldValidationResult<TNumberSpecification>>>>();
+
         public Identifier Identifier
             => Identifier.For<IFieldValidator<TNumberSpecification>>(GetType());
 
         public Identifier FieldSpecificationIdentifier
             => Identifier.For<IFieldSpecification<TNumberSpecification>>(typeof(TFieldSpecification));
 
-        protected IReadOnlyList<IFieldSpecification<TNumberSpecification>> FieldSpecifications { get; }
+        public IReadOnlyList<KeyValuePair<Identifier, Func<string[], IFieldValidationResult<TNumberSpecification>>>> FieldDependentValidators
+            => _fieldDependentValidators.ToList();
 
-        public virtual IReadOnlyList<Identifier> FieldDependencyIdentifiers { get; }
+        public virtual IReadOnlyList<Identifier> FieldDependencyIdentifiers
+            => FieldDependentValidators.Select(kvp => kvp.Key).ToList();
 
         public bool HasFieldDependencies =>
             FieldDependencyIdentifiers != null && FieldDependencyIdentifiers.Count > 0;
 
         public abstract IFieldValidationResult<TNumberSpecification> Validate(string input);
+
+        protected void AddFieldDependentValidator<TFieldSpecificationDependency>(Func<string[], IFieldValidationResult<TNumberSpecification>> validator)
+            where TFieldSpecificationDependency : IFieldSpecification<TNumberSpecification>
+        {
+            _fieldDependentValidators.Add(new KeyValuePair<Identifier, Func<string[], IFieldValidationResult<TNumberSpecification>>>(
+                Identifier.For<TFieldSpecificationDependency>(typeof(TFieldSpecification)),
+                validator
+            ));
+        }
 
         protected IFieldValidationResult<TNumberSpecification> IsValid()
             => new FieldValidationResult<TFieldSpecification, TNumberSpecification>(true);
@@ -32,5 +48,6 @@ namespace Kf.Numaris.Api.Validation.Fields
             => new FieldValidationResult<TFieldSpecification, TNumberSpecification>(true, message);
         protected IFieldValidationResult<TNumberSpecification> IsNotValid(string message)
             => new FieldValidationResult<TFieldSpecification, TNumberSpecification>(false, message);
+
     }
 }

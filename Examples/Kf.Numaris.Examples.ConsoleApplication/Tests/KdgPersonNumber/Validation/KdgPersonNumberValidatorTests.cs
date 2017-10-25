@@ -23,7 +23,8 @@ namespace Kf.Numaris.Examples.ConsoleApplication.Tests.KdgPersonNumber.Validatio
 
         [Theory,
          InlineData("0033311-4A"),
-         InlineData("3331A-40")]
+         InlineData("3331A-40")/*,
+         InlineData("0033311-39")*/]
         public void IsNotValid_in_scenario(string input)
         {
             var sut = CreateKdgPersonNumberValidator();

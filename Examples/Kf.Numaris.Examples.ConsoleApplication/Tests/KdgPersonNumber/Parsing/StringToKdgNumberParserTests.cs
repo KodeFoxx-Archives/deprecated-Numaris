@@ -27,6 +27,18 @@ namespace Kf.Numaris.Examples.ConsoleApplication.Tests.KdgPersonNumber.Parsing
             };
 
             yield return new object[] {
+                "Letters are allowed when parsing",
+                "AA3331140",
+                new [] { "AA33311", "40" }
+            };
+
+            yield return new object[] {
+                "Letters are allowed when parsing",
+                "0033311B4",
+                new [] { "0033311", "B4" }
+            };
+
+            yield return new object[] {
                 "Number is given without seperator and without padding",
                 "3331140",
                 new [] { "33311", "40" }
