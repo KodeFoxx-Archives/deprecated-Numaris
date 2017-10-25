@@ -2,7 +2,7 @@
 using Autofac;
 using Kf.Numaris.Api.Specifications.Numbers;
 
-namespace Kf.Numaris.Implementations
+namespace Kf.Numaris.Api.Implementation.Autofac
 {
     public static class AutofacModuleExtensions
     {

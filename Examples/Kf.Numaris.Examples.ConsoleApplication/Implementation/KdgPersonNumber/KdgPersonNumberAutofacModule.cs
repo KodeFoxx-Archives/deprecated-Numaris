@@ -1,5 +1,5 @@
-﻿using Kf.Numaris.Examples.ConsoleApplication.Implementation.KdgPersonNumber.Specification;
-using Kf.Numaris.Implementations;
+﻿using Kf.Numaris.Api.Implementation.Autofac;
+using Kf.Numaris.Examples.ConsoleApplication.Implementation.KdgPersonNumber.Specification;
 
 namespace Kf.Numaris.Examples.ConsoleApplication.Implementation.KdgPersonNumber
 {

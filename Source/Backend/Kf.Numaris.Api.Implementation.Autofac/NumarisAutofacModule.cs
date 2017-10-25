@@ -1,12 +1,11 @@
-﻿using System.Linq;
-using Autofac;
+﻿using Autofac;
 using Kf.Numaris.Api.Formatting.Fields;
 using Kf.Numaris.Api.Formatting.Numbers;
 using Kf.Numaris.Api.Parsing.Parsers;
 using Kf.Numaris.Api.Specifications.Field;
 using Kf.Numaris.Api.Specifications.Numbers;
 
-namespace Kf.Numaris.Implementations
+namespace Kf.Numaris.Api.Implementation.Autofac
 {
     public abstract class NumarisAutofacModule<TNumberSpecification> : Module
         where TNumberSpecification : INumberSpecification
