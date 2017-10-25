@@ -8,6 +8,7 @@ namespace Kf.Numaris.Api.Validation.Numbers
         where TNumberSpecification : INumberSpecification
     {
         Identifier Identifier { get; }
-        IValidationResult Validate();
+        IValidationResult Validate(string input);
+        IValidationResult Validate(string[] input);
     }
 }

@@ -17,7 +17,10 @@ namespace Kf.Numaris.Api.Formatting.Numbers
         public IReadOnlyDictionary<int, IFieldFormatter<TNumberSpecification>> FieldFormatters { get; }
         public IStringParser<TNumberSpecification> StringParser { get; }
         protected IReadOnlyList<IFieldFormatter<TNumberSpecification>> OrderedFieldFormatters
-            => FieldFormatters.OrderBy(ff => ff.Key).Select(ff => ff.Value).ToList();
+            => FieldFormatters
+                .Where(ff => ff.Value != null)
+                .OrderBy(ff => ff.Key)
+                .Select(ff => ff.Value).ToList();
 
         protected NumberFormatter(
             IEnumerable<IFieldFormatter<TNumberSpecification>> fieldFormatters,

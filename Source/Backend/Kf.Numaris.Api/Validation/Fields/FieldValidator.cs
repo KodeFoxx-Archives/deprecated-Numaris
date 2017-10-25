@@ -30,6 +30,6 @@ namespace Kf.Numaris.Api.Validation.Fields
             FieldSpecifications = fieldSpecifications?.ToList() ?? new List<IFieldSpecification<TNumberSpecification>>();
         }
 
-        public abstract IPartialValidationResult Validate();
+        public abstract IPartialValidationResult Validate(string input);
     }
 }

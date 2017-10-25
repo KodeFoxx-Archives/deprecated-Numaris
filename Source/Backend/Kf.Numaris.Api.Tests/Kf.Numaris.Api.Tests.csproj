@@ -22,4 +22,8 @@
     </None>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Validation\Fields\" />
+  </ItemGroup>
+
 </Project>

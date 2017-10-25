@@ -12,6 +12,6 @@ namespace Kf.Numaris.Api.Validation.Fields
         Identifier FieldSpecificationIdentifier { get; }
         IReadOnlyList<Identifier> FieldDependencyIdentifiers { get; }
         bool HasFieldDependencies { get; }
-        IPartialValidationResult Validate();
+        IPartialValidationResult Validate(string input);
     }
 }
