@@ -2,12 +2,12 @@
 
 namespace Kf.Numaris.Api.Validation.Results
 {
-    public abstract class PartialValidationResult : IPartialValidationResult
+    public class PartialValidationResult : IPartialValidationResult
     {
         public Identifier Identifier => Identifier.For<PartialValidationResult>(GetType());
         public bool IsValid { get; }
 
-        protected PartialValidationResult(bool isValid)
+        public PartialValidationResult(bool isValid)
             => IsValid = isValid;
     }
 }
