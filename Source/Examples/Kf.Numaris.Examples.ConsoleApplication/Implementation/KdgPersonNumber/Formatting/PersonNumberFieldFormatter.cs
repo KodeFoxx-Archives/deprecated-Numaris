@@ -1,9 +1,9 @@
 ﻿using System;
 using Kf.Numaris.Api.Formatting.Fields;
-using Kf.Numaris.Implementations.KdgPersonNumber.Specification;
-using Kf.Numaris.Implementations.KdgPersonNumber.Specification.Fields;
+using Kf.Numaris.Examples.ConsoleApplication.Implementation.KdgPersonNumber.Specification;
+using Kf.Numaris.Examples.ConsoleApplication.Implementation.KdgPersonNumber.Specification.Fields;
 
-namespace Kf.Numaris.Implementations.KdgPersonNumber.Formatting
+namespace Kf.Numaris.Examples.ConsoleApplication.Implementation.KdgPersonNumber.Formatting
 {
     public sealed class PersonNumberFieldFormatter : FieldFormatter<PersonNumberFieldSpecification, KdgNumberSpecification>
     {

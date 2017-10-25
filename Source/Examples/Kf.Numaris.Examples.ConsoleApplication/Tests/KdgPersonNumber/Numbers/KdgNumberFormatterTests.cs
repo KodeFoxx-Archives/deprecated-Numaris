@@ -2,12 +2,12 @@
 using Kf.Numaris.Api.Formatting.Fields;
 using Kf.Numaris.Api.Formatting.Numbers;
 using Kf.Numaris.Api.Specifications.Field;
-using Kf.Numaris.Implementations.KdgPersonNumber.Formatting;
-using Kf.Numaris.Implementations.KdgPersonNumber.Specification;
-using Kf.Numaris.Implementations.KdgPersonNumber.Specification.Fields;
+using Kf.Numaris.Examples.ConsoleApplication.Implementation.KdgPersonNumber.Formatting;
+using Kf.Numaris.Examples.ConsoleApplication.Implementation.KdgPersonNumber.Specification;
+using Kf.Numaris.Examples.ConsoleApplication.Implementation.KdgPersonNumber.Specification.Fields;
 using Xunit;
 
-namespace Kf.Numaris.Implementations.Tests.KdgPersonNumber.Numbers
+namespace Kf.Numaris.Examples.ConsoleApplication.Tests.KdgPersonNumber.Numbers
 {
     public class KdgNumberFormatterTests
     {

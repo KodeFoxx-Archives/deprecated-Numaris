@@ -1,6 +1,6 @@
 ﻿using Kf.Numaris.Api.Specifications.Field;
 
-namespace Kf.Numaris.Implementations.KdgPersonNumber.Specification.Fields
+namespace Kf.Numaris.Examples.ConsoleApplication.Implementation.KdgPersonNumber.Specification.Fields
 {
     public sealed class CheckDigitsFieldSpecification : FieldSpecification<KdgNumberSpecification>
     {

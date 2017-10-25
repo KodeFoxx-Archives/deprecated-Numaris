@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
-using Kf.Numaris.Implementations.KdgPersonNumber.Parsing;
+using Kf.Numaris.Examples.ConsoleApplication.Implementation.KdgPersonNumber.Parsing;
 using Xunit;
 
-namespace Kf.Numaris.Implementations.Tests.KdgPersonNumber.Parsers
+namespace Kf.Numaris.Examples.ConsoleApplication.Tests.KdgPersonNumber.Parsers
 {
     public class StringToKdgNumberParserTests
     {

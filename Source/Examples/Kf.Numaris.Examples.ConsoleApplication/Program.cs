@@ -2,15 +2,16 @@
 using System.Collections.Generic;
 using System.Linq;
 using Autofac;
-using Kf.Numaris.Implementations.KdgPersonNumber.Specification;
+using Kf.Numaris.Examples.ConsoleApplication.Implementation.KdgPersonNumber.Specification;
+using Kf.Numaris.Presentation.ConsoleApplicationExample;
 
-namespace Kf.Numaris.Presentation.ConsoleApplicationExample
+namespace Kf.Numaris.Examples.ConsoleApplication
 {
     class Program
     {
         private readonly IEnumerable<IExample> _examples;
 
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             var container = ConfigureContainer();
             var program = container.Resolve<Program>();

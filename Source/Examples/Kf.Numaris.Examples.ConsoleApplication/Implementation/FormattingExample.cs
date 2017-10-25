@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using Kf.Numaris.Api.Formatting.Numbers;
-using Kf.Numaris.Implementations.KdgPersonNumber.Specification;
+using Kf.Numaris.Examples.ConsoleApplication.Implementation.KdgPersonNumber.Specification;
+using Kf.Numaris.Presentation.ConsoleApplicationExample;
 
-namespace Kf.Numaris.Presentation.ConsoleApplicationExample
+namespace Kf.Numaris.Examples.ConsoleApplication.Implementation
 {
     class FormattingExample : IExample
     {
