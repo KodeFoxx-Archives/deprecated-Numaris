@@ -10,15 +10,15 @@ namespace Kf.Numaris.Api.Tests.Common
         [Fact]
         public void Sets_Id_to_FullName_of_calling_type()
         {
-            var sut = new FakeFieldSpecificationOne();
-            Assert.Equal(typeof(FakeFieldSpecificationOne).FullName, sut.Identifier.Id);
+            var sut = new FakeFieldOneSpecification();
+            Assert.Equal(typeof(FakeFieldOneSpecification).FullName, sut.Identifier.Id);
         }
 
         [Fact]
         public void Sets_Name_to_Name_of_calling_type()
         {
-            var sut = new FakeFieldSpecificationOne();
-            Assert.Equal(typeof(FakeFieldSpecificationOne).Name, sut.Identifier.Name);
+            var sut = new FakeFieldOneSpecification();
+            Assert.Equal(typeof(FakeFieldOneSpecification).Name, sut.Identifier.Name);
         }
 
         [Fact]

@@ -17,19 +17,18 @@ namespace Kf.Numaris.Api.Validation.Fields
         public Identifier FieldSpecificationIdentifier
             => Identifier.For<IFieldSpecification<TNumberSpecification>>(typeof(TFieldSpecification));
 
+        protected IReadOnlyList<IFieldSpecification<TNumberSpecification>> FieldSpecifications { get; }
+
         public virtual IReadOnlyList<Identifier> FieldDependencyIdentifiers { get; }
 
         public bool HasFieldDependencies =>
             FieldDependencyIdentifiers != null && FieldDependencyIdentifiers.Count > 0;
 
-        protected IReadOnlyList<IFieldSpecification<TNumberSpecification>> FieldSpecifications { get; }
+        public abstract IFieldValidationResult<TNumberSpecification> Validate(string input);
 
-        public FieldValidator(
-            IEnumerable<IFieldSpecification<TNumberSpecification>> fieldSpecifications)
-        {
-            FieldSpecifications = fieldSpecifications?.ToList() ?? new List<IFieldSpecification<TNumberSpecification>>();
-        }
-
-        public abstract IPartialValidationResult Validate(string input);
+        protected IFieldValidationResult<TNumberSpecification> IsValid()
+            => new FieldValidationResult<TFieldSpecification, TNumberSpecification>(true);
+        protected IFieldValidationResult<TNumberSpecification> IsNotValid()
+            => new FieldValidationResult<TFieldSpecification, TNumberSpecification>(false);
     }
 }

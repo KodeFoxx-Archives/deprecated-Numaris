@@ -4,7 +4,7 @@ using Kf.Numaris.Api.Tests.Specifications.Numbers;
 
 namespace Kf.Numaris.Api.Tests.Formatting.Fields
 {
-    public sealed class FakeFieldTwoFormatter : FieldFormatter<FakeFieldSpecificationTwo, FakeNumberSpecification>
+    public sealed class FakeFieldTwoFormatter : FieldFormatter<FakeFieldTwoSpecification, FakeNumberSpecification>
     {
         public override string Format(string input)
             => input;
