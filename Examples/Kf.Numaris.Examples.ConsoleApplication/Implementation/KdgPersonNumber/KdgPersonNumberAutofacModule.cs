@@ -4,7 +4,7 @@ using Kf.Numaris.Examples.ConsoleApplication.Implementation.KdgPersonNumber.Spec
 namespace Kf.Numaris.Examples.ConsoleApplication.Implementation.KdgPersonNumber
 {
     public sealed class KdgPersonNumberAutofacModule
-        : NumarisAutofacModule<KdgNumberSpecification>
+        : NumarisAutofacModule<KdgPersonNumberSpecification>
     {
     }
 }

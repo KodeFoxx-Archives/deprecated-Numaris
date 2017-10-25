@@ -34,7 +34,7 @@ namespace Kf.Numaris.Examples.ConsoleApplication
             //builder.RegisterType<CheckDigitsFieldFormatter>().As<IFieldFormatter<KdgNumberSpecification>>();
 
             // 01b. This is how you can load modules with autofac:
-            builder.RegisterAssemblyModules(typeof(KdgNumberSpecification).Assembly);
+            builder.RegisterAssemblyModules(typeof(KdgPersonNumberSpecification).Assembly);
 
             // 02. This is application specific wiring
             builder.RegisterType<Program>();

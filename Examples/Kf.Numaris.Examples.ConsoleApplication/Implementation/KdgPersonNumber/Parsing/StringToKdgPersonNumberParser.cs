@@ -5,7 +5,7 @@ using Kf.Numaris.Examples.ConsoleApplication.Implementation.KdgPersonNumber.Spec
 
 namespace Kf.Numaris.Examples.ConsoleApplication.Implementation.KdgPersonNumber.Parsing
 {
-    public sealed class StringToKdgNumberParser : StringParser<KdgNumberSpecification>
+    public sealed class StringToKdgPersonNumberParser : StringParser<KdgPersonNumberSpecification>
     {
         public override string[] Parse(string input)
         {
@@ -13,7 +13,7 @@ namespace Kf.Numaris.Examples.ConsoleApplication.Implementation.KdgPersonNumber.
                 return new[] { "0", "0" };
 
             var numbersOfTheInputString = input
-                .Where(Char.IsDigit)
+                .Where(Char.IsLetterOrDigit)
                 .ToArray();
 
             return new[] {

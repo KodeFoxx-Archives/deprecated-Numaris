@@ -1,7 +1,7 @@
 ﻿using Kf.Numaris.Examples.ConsoleApplication.Implementation.KdgPersonNumber.Formatting;
 using Xunit;
 
-namespace Kf.Numaris.Examples.ConsoleApplication.Tests.KdgPersonNumber.Fields
+namespace Kf.Numaris.Examples.ConsoleApplication.Tests.KdgPersonNumber.Formatting
 {
     public class PersonNumberFieldFormatterTests
     {

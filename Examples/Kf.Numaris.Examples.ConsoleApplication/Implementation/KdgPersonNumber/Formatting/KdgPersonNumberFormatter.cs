@@ -7,12 +7,12 @@ using Kf.Numaris.Examples.ConsoleApplication.Implementation.KdgPersonNumber.Spec
 
 namespace Kf.Numaris.Examples.ConsoleApplication.Implementation.KdgPersonNumber.Formatting
 {
-    public sealed class KdgNumberFormatter : NumberFormatter<KdgNumberSpecification>
+    public sealed class KdgPersonNumberFormatter : NumberFormatter<KdgPersonNumberSpecification>
     {
-        public KdgNumberFormatter(
-            IEnumerable<IFieldFormatter<KdgNumberSpecification>> fieldFormatters,
-            IEnumerable<IFieldSpecification<KdgNumberSpecification>> fieldSpecifications,
-            IStringParser<KdgNumberSpecification> stringParser)
+        public KdgPersonNumberFormatter(
+            IEnumerable<IFieldFormatter<KdgPersonNumberSpecification>> fieldFormatters,
+            IEnumerable<IFieldSpecification<KdgPersonNumberSpecification>> fieldSpecifications,
+            IStringParser<KdgPersonNumberSpecification> stringParser)
             : base(fieldFormatters, fieldSpecifications, stringParser) { }
 
         public override string Format(string[] input)

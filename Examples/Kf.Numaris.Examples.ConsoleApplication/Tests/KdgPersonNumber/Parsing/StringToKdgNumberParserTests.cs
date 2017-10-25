@@ -2,7 +2,7 @@
 using Kf.Numaris.Examples.ConsoleApplication.Implementation.KdgPersonNumber.Parsing;
 using Xunit;
 
-namespace Kf.Numaris.Examples.ConsoleApplication.Tests.KdgPersonNumber.Parsers
+namespace Kf.Numaris.Examples.ConsoleApplication.Tests.KdgPersonNumber.Parsing
 {
     public class StringToKdgNumberParserTests
     {
@@ -67,7 +67,7 @@ namespace Kf.Numaris.Examples.ConsoleApplication.Tests.KdgPersonNumber.Parsers
          MemberData(nameof(Returns_correct_parsed_string_array_given_TestData))]
         public void Returns_correct_parsed_string_array_given(string scenario, string input, string[] expected)
         {
-            var sut = new StringToKdgNumberParser();
+            var sut = new StringToKdgPersonNumberParser();
             var actual = sut.Parse(input);
             Assert.Equal(expected, actual);
         }
@@ -78,7 +78,7 @@ namespace Kf.Numaris.Examples.ConsoleApplication.Tests.KdgPersonNumber.Parsers
          InlineData("  ")]
         public void Returns_zeroes_when_string_is_null_whitespace_or_empty(string input)
         {
-            var sut = new StringToKdgNumberParser();
+            var sut = new StringToKdgPersonNumberParser();
             var actual = sut.Parse(input);
             Assert.Equal(new[] { "0", "0" }, actual);
         }
@@ -89,7 +89,7 @@ namespace Kf.Numaris.Examples.ConsoleApplication.Tests.KdgPersonNumber.Parsers
          InlineData(@"\"), InlineData("|"), InlineData(":")]
         public void Returns_correct_number_with_given_seperator(string seperator)
         {
-            var sut = new StringToKdgNumberParser();
+            var sut = new StringToKdgPersonNumberParser();
             var actual = sut.Parse($"0033311{seperator}40");
             Assert.Equal(new[] { "0033311", "40" }, actual);
         }

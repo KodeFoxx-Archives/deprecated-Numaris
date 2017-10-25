@@ -7,7 +7,7 @@ using Kf.Numaris.Examples.ConsoleApplication.Implementation.KdgPersonNumber.Spec
 using Kf.Numaris.Examples.ConsoleApplication.Implementation.KdgPersonNumber.Specification.Fields;
 using Xunit;
 
-namespace Kf.Numaris.Examples.ConsoleApplication.Tests.KdgPersonNumber.Numbers
+namespace Kf.Numaris.Examples.ConsoleApplication.Tests.KdgPersonNumber.Formatting
 {
     public class KdgNumberFormatterTests
     {
@@ -29,12 +29,12 @@ namespace Kf.Numaris.Examples.ConsoleApplication.Tests.KdgPersonNumber.Numbers
             Assert.Equal(expected, actual);
         }
 
-        private INumberFormatter<KdgNumberSpecification> CreateNumberFormatter()
-            => new KdgNumberFormatter(
-                    fieldFormatters: new List<IFieldFormatter<KdgNumberSpecification>> {
+        private INumberFormatter<KdgPersonNumberSpecification> CreateNumberFormatter()
+            => new KdgPersonNumberFormatter(
+                    fieldFormatters: new List<IFieldFormatter<KdgPersonNumberSpecification>> {
                         new CheckDigitsFieldFormatter(), new PersonNumberFieldFormatter()
                     },
-                    fieldSpecifications: new List<IFieldSpecification<KdgNumberSpecification>> {
+                    fieldSpecifications: new List<IFieldSpecification<KdgPersonNumberSpecification>> {
                         new PersonNumberFieldSpecification(), new CheckDigitsFieldSpecification()
                     },
                     stringParser: null

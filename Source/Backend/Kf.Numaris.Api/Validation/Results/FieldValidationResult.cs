@@ -12,8 +12,8 @@ namespace Kf.Numaris.Api.Validation.Results
         public Identifier FieldSpecificationIdentifier
             => Identifier.For<IFieldSpecification<TNumberSpecification>>(typeof(TFieldSpecification));
 
-        public FieldValidationResult(bool isValid)
-            : base(isValid)
+        public FieldValidationResult(bool isValid, string message = null)
+            : base(isValid, message)
         { }
     }
 }

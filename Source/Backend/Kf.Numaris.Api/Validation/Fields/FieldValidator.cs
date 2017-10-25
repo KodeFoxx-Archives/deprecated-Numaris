@@ -28,7 +28,9 @@ namespace Kf.Numaris.Api.Validation.Fields
 
         protected IFieldValidationResult<TNumberSpecification> IsValid()
             => new FieldValidationResult<TFieldSpecification, TNumberSpecification>(true);
-        protected IFieldValidationResult<TNumberSpecification> IsNotValid()
-            => new FieldValidationResult<TFieldSpecification, TNumberSpecification>(false);
+        protected IFieldValidationResult<TNumberSpecification> IsValidWithWarning(string message)
+            => new FieldValidationResult<TFieldSpecification, TNumberSpecification>(true, message);
+        protected IFieldValidationResult<TNumberSpecification> IsNotValid(string message)
+            => new FieldValidationResult<TFieldSpecification, TNumberSpecification>(false, message);
     }
 }

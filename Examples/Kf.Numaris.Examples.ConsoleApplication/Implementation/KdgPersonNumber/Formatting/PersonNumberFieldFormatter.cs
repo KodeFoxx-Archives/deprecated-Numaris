@@ -5,7 +5,7 @@ using Kf.Numaris.Examples.ConsoleApplication.Implementation.KdgPersonNumber.Spec
 
 namespace Kf.Numaris.Examples.ConsoleApplication.Implementation.KdgPersonNumber.Formatting
 {
-    public sealed class PersonNumberFieldFormatter : FieldFormatter<PersonNumberFieldSpecification, KdgNumberSpecification>
+    public sealed class PersonNumberFieldFormatter : FieldFormatter<PersonNumberFieldSpecification, KdgPersonNumberSpecification>
     {
         private readonly int _maxLength = 7;
         private char _paddingCharacter = '0';

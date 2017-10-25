@@ -9,13 +9,13 @@ namespace Kf.Numaris.Examples.ConsoleApplication.Implementation
 {
     class ParsingExample : IExample
     {
-        private readonly IStringParser<KdgNumberSpecification> _stringParser;
+        private readonly IStringParser<KdgPersonNumberSpecification> _stringParser;
         private readonly List<string> _numbers = new List<string>
         {
             "003331140", "3331140", "140", "33311.40", "  00 3 3 3 11  40"
         };
 
-        public ParsingExample(IStringParser<KdgNumberSpecification> stringParser)
+        public ParsingExample(IStringParser<KdgPersonNumberSpecification> stringParser)
             => _stringParser = stringParser;
 
         public string Notes => "The parser demonstrated here is used internally in the API, e.g. in the formatters.";

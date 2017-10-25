@@ -2,7 +2,7 @@
 
 namespace Kf.Numaris.Examples.ConsoleApplication.Implementation.KdgPersonNumber.Specification
 {
-    public sealed class KdgNumberSpecification : NumberSpecification
+    public sealed class KdgPersonNumberSpecification : NumberSpecification
     {
     }
 }
