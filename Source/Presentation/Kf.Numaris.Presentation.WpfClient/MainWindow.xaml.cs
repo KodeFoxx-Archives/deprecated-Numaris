@@ -1,6 +1,7 @@
-﻿using System.Linq;
-using System.Windows;
+﻿using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Controls;
+using Kf.Numaris.Api.Specifications.Numbers;
 using Kf.Numaris.Presentation.WpfClient.ViewModel;
 
 namespace Kf.Numaris.Presentation.WpfClient
@@ -8,7 +9,7 @@ namespace Kf.Numaris.Presentation.WpfClient
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow
     {
         private readonly ApplicationInfoViewModel _applicationInfo;
         private TabControl _tabControl;
@@ -27,18 +28,25 @@ namespace Kf.Numaris.Presentation.WpfClient
 
             _tabControl.Items.Add(new TabItem
             {
-                Header = new Label { Content = "ApplicationInfo" }
+                Header = "ApplicationInfo",
+                Content = new Label { Content = "ApplicationInfo todo..." }
             });
 
-            applicationInfo.NumberSpecifications.ToList().ForEach(numberSpecification =>
+            AddNumberSpecificationTabs(applicationInfo.NumberSpecifications);
+
+            this.Content = _tabControl;
+        }
+
+        private void AddNumberSpecificationTabs(IEnumerable<INumberSpecification> numberSpecifications)
+        {
+            numberSpecifications.ToList().ForEach(numberSpecification =>
             {
                 _tabControl.Items.Add(new TabItem
                 {
-                    Header = new Label { Content = numberSpecification.Identifier.Name }
+                    Header = numberSpecification.Identifier.Name,
+                    Content = new Label { Content = $"'{numberSpecification.Identifier.Id}' todo..." }
                 });
             });
-
-            this.Content = _tabControl;
         }
     }
 }
