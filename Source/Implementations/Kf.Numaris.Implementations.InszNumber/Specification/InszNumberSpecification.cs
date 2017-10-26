@@ -4,9 +4,9 @@ using Kf.Numaris.Api.Specifications.Numbers;
 namespace Kf.Numaris.Implementations.InszNumber.Specification
 {
     /*
-     * Het Rijksregisternummer is een uniek identificatienummer toegekend aan natuurlijke personen ingeschreven in België. 
-     * Iedere burger met ofwel een Belgisch identiteitsdocument ofwel een Belgisch verblijfsdocument heeft zo'n nummer. 
-     * Rechtspersonen hebben als uniek identificatienummer een ondernemingsnummer, 
+     * Het Rijksregisternummer of INSZ (Identifucatie nummer Sociale Zekerheid) is een uniek identificatienummer toegekend 
+     * aan natuurlijke personen ingeschreven in België. Iedere burger met ofwel een Belgisch identiteitsdocument 
+     * ofwel een Belgisch verblijfsdocument heeft zo'n nummer. Rechtspersonen hebben als uniek identificatienummer een ondernemingsnummer, 
      * geregistreerd bij de Kruispuntbank van Ondernemingen. Het rijksregisternummer wordt officieel het 
      * identificatienummer bij het Rijksregister van de natuurlijke personen genoemd, 
      * of ook nog: het nationale nummer. 
@@ -22,7 +22,7 @@ namespace Kf.Numaris.Implementations.InszNumber.Specification
      * - https://nl.wikipedia.org/wiki/Rijksregisternummer
      */
     public sealed class InszNumberSpecification : NumberSpecification
-    {         
+    {
     }
 
     /*

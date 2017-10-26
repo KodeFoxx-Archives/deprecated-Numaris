@@ -14,7 +14,14 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Backend\Kf.Numaris.Api\Kf.Numaris.Api.csproj" />
+    <ProjectReference Include="..\Kf.Numaris.Implementations.InszNumber\Kf.Numaris.Implementations.InszNumber.csproj" />
     <ProjectReference Include="..\Kf.Numaris.Implementations\Kf.Numaris.Implementations.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="xunit.runner.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>
