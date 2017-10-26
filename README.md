@@ -1,6 +1,10 @@
+<img align="right" style="margin: 16px;" src="https://github.com/KodeFoxx/Numaris/blob/master/Resources/Images/logo-numaris.png?raw=true" width=180 height=180/>
+
 # Numaris
 A toolset to validate, format, parse and generate structured (organisational, government, ...) numbers/codes.
 
+
+## Build status
 Build status | Test status
 --- | --- 
 [![Build status](https://ci.appveyor.com/api/projects/status/ylx7kd61ro7cqbpu/branch/master?svg=true)](https://ci.appveyor.com/project/aredfox/numaris/branch/master) | [![Test status](http://flauschig.ch/batch.php?type=tests&account=aredfox&slug=numaris)](https://ci.appveyor.com/project/aredfox/numaris/build/tests)
