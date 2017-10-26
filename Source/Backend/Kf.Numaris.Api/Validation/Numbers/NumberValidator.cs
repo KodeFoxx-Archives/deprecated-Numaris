@@ -57,12 +57,11 @@ namespace Kf.Numaris.Api.Validation.Numbers
             string[] input)
         {
             var valuesPerFieldIdentifier = GetValuesPerFieldIdentifier(orderedFieldValidators, input);
-            return new List<IPartialValidationResult>();
+            return MultipleFieldsValidators.Select(mfv => mfv.Validate(valuesPerFieldIdentifier));
         }            
 
         private IEnumerable<KeyValuePair<Identifier, string>> GetValuesPerFieldIdentifier(
-            IReadOnlyList<IFieldValidator<TNumberSpecification>> orderedFieldValidators, 
-            string[] input)
-            => orderedFieldValidators.Select((fv, i) => new KeyValuePair<Identifier, string>(key: fv.Identifier, value: input[i]));        
+            IReadOnlyList<IFieldValidator<TNumberSpecification>> orderedFieldValidators, string[] input)
+            => orderedFieldValidators.Select((fv, i) => new KeyValuePair<Identifier, string>(key: fv.FieldSpecificationIdentifier, value: input[i]));        
     }
 }

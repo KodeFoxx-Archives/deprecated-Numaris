@@ -11,7 +11,7 @@ namespace Kf.Numaris.Api.Validation.Fields
         public static string GetValueForField<TFieldSpecification, TNumberSpecification>(this IEnumerable<KeyValuePair<Identifier, string>> input)
             where TFieldSpecification : IFieldSpecification<TNumberSpecification>
             where TNumberSpecification : INumberSpecification
-            => input.Where(kv => kv.Key.Equals(Identifier.For<TFieldSpecification>()))
+            => input.Where(kv => kv.Key.Id.Equals(Identifier.For<TFieldSpecification>().Id))
                 .Select(kv => kv.Value)
                 .SingleOrDefault();
     }

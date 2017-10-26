@@ -23,10 +23,10 @@ namespace Kf.Numaris.Examples.ConsoleApplication.Implementation.KdgPersonNumber.
             var checkDigitsValue = GetValueForField<CheckDigitsFieldSpecification>(input);
             var personNumberValue = GetValueForField<PersonNumberFieldSpecification>(input);
 
-            if (Int32.TryParse(checkDigitsValue, out var checkDigits))
+            if (!Int32.TryParse(checkDigitsValue, out var checkDigits))
                 return IsNotValid<CheckDigitsFieldSpecification>("Cannot consist of anything other than digits ranging from 0 to 9");
 
-            if(Int32.TryParse(personNumberValue, out var personNumber))
+            if(!Int32.TryParse(personNumberValue, out var personNumber))
                 return IsNotValid<PersonNumberFieldSpecification>("Cannot consist of anything other than digits ranging from 0 to 9");
 
             var personNumberMod97 = personNumber % 97;

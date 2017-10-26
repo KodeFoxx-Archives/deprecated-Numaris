@@ -21,7 +21,7 @@ namespace Kf.Numaris.Api.Implementation.Autofac
             builder.RegisterAssemblyTypesWithClassImplementations<TNumberSpecification, INumberFormatter<TNumberSpecification>>();
             builder.RegisterAssemblyTypesWithClassImplementations<TNumberSpecification, IFieldSpecification<TNumberSpecification>>();
             builder.RegisterAssemblyTypesWithClassImplementations<TNumberSpecification, IFieldFormatter<TNumberSpecification>>();
-            builder.RegisterAssemblyTypesWithClassImplementations<TNumberSpecification, IStringParser<TNumberSpecification>>();
+            builder.RegisterAssemblyTypesWithClassImplementations<TNumberSpecification, IStringParser<TNumberSpecification>>();            
         }
 
         protected virtual void LoadSpecificTypes(ContainerBuilder builder)

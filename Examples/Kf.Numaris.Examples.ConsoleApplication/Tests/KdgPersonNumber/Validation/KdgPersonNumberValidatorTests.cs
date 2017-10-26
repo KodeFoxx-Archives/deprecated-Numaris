@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using Kf.Numaris.Api.Specifications.Field;
 using Kf.Numaris.Api.Validation.Fields;
 using Kf.Numaris.Examples.ConsoleApplication.Implementation.KdgPersonNumber.Parsing;
@@ -22,14 +23,17 @@ namespace Kf.Numaris.Examples.ConsoleApplication.Tests.KdgPersonNumber.Validatio
         }
 
         [Theory,
-         InlineData("0033311-4A"),
-         InlineData("3331A-40")/*,
-         InlineData("0033311-39")*/]
-        public void IsNotValid_in_scenario(string input)
+         InlineData("0033311-4A", "Cannot consist of anything other than digits ranging from 0 to 9"),
+         InlineData("3331A-40", "Cannot consist of anything other than digits ranging from 0 to 9"),
+         InlineData("0033311-39", "Has to be mod 97 of the person number")]
+        public void IsNotValid_in_scenario(string input, string message)
         {
             var sut = CreateKdgPersonNumberValidator();
             var result = sut.Validate(input);
             Assert.False(result.IsValid);
+
+            if(message != null)
+                Assert.Contains(message, result.PartialResults.Where(pr => pr.HasMessage).Select(pr => pr.Message));
         }
 
         private KdgPersonNumberValidator CreateKdgPersonNumberValidator()
@@ -37,7 +41,9 @@ namespace Kf.Numaris.Examples.ConsoleApplication.Tests.KdgPersonNumber.Validatio
                 fieldSpecifications: new List<IFieldSpecification<KdgPersonNumberSpecification>> {
                     new PersonNumberFieldSpecification(), new CheckDigitsFieldSpecification()
                 },
-                multipleFieldsValidators: null,
+                multipleFieldsValidators: new List<IMultipleFieldsValidator<KdgPersonNumberSpecification>> { 
+                    new CheckDigitsMultipleFieldsValidator()
+                }, 
                 fieldValidators: new List<IFieldValidator<KdgPersonNumberSpecification>> {
                     new CheckDigitsFieldValidator(), new PersonNumberFieldValidator()
                 },
