@@ -22,15 +22,6 @@ namespace Kf.Numaris.Api.Validation.Fields
         public Identifier FieldSpecificationIdentifier
             => Identifier.For<IFieldSpecification<TNumberSpecification>>(typeof(TFieldSpecification));
 
-        public IReadOnlyList<KeyValuePair<Identifier, Func<string[], IFieldValidationResult<TNumberSpecification>>>> FieldDependentValidators
-            => _fieldDependentValidators.ToList();
-
-        public virtual IReadOnlyList<Identifier> FieldDependencyIdentifiers
-            => FieldDependentValidators.Select(kvp => kvp.Key).ToList();
-
-        public bool HasFieldDependencies =>
-            FieldDependencyIdentifiers != null && FieldDependencyIdentifiers.Count > 0;
-
         public abstract IFieldValidationResult<TNumberSpecification> Validate(string input);
 
         protected void AddFieldDependentValidator<TFieldSpecificationDependency>(Func<string[], IFieldValidationResult<TNumberSpecification>> validator)

@@ -21,14 +21,17 @@ namespace Kf.Numaris.Api.Validation.Numbers
                 .Where(fv => fv.Value != null)
                 .OrderBy(fv => fv.Key)
                 .Select(fv => fv.Value).ToList();
+        protected IReadOnlyList<IMultipleFieldsValidator<TNumberSpecification>> MultipleFieldsValidators { get; }        
         protected IStringParser<TNumberSpecification> StringParser { get; }
 
         protected NumberValidator(
             IEnumerable<IFieldValidator<TNumberSpecification>> fieldValidators,
+            IEnumerable<IMultipleFieldsValidator<TNumberSpecification>> multipleFieldsValidators,
             IEnumerable<IFieldSpecification<TNumberSpecification>> fieldSpecifications,
             IStringParser<TNumberSpecification> stringParser = null)
         {
             fieldValidators = fieldValidators?.ToList() ?? new List<IFieldValidator<TNumberSpecification>>();
+            MultipleFieldsValidators = multipleFieldsValidators?.ToList() ?? new List<IMultipleFieldsValidator<TNumberSpecification>>();
             FieldValidators = fieldSpecifications
                 .OrderBy(fs => fs.Order)
                 .ToDictionary(
@@ -39,8 +42,18 @@ namespace Kf.Numaris.Api.Validation.Numbers
         }
 
         public virtual IValidationResult Validate(string[] input)
-            => new ValidationResult(OrderedFieldValidators.Select((fv, i) => fv.Validate(input[i])));
+        {
+            var fieldValidators = OrderedFieldValidators.Select((fv, i) => fv.Validate(input[i]));
+            var multipleFieldsValidators = EvaluateMultipleFieldsValidators();
+            return new ValidationResult(fieldValidators.Concat(multipleFieldsValidators));
+        }
+
         public virtual IValidationResult Validate(string input)
             => Validate(StringParser != null ? StringParser.Parse(input) : new[] { input });
+
+        private IEnumerable<IPartialValidationResult> EvaluateMultipleFieldsValidators()
+        {
+            return new List<IPartialValidationResult>();
+        }
     }
 }

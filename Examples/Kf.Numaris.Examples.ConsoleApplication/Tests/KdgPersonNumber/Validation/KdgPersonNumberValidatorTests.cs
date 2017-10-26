@@ -37,6 +37,7 @@ namespace Kf.Numaris.Examples.ConsoleApplication.Tests.KdgPersonNumber.Validatio
                 fieldSpecifications: new List<IFieldSpecification<KdgPersonNumberSpecification>> {
                     new PersonNumberFieldSpecification(), new CheckDigitsFieldSpecification()
                 },
+                multipleFieldsValidators: null,
                 fieldValidators: new List<IFieldValidator<KdgPersonNumberSpecification>> {
                     new CheckDigitsFieldValidator(), new PersonNumberFieldValidator()
                 },

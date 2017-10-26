@@ -11,9 +11,10 @@ namespace Kf.Numaris.Api.Tests.Validation.Numbers
     {
         public FakeNumberValidator(
             IEnumerable<IFieldValidator<FakeNumberSpecification>> fieldValidators,
+            IEnumerable<IMultipleFieldsValidator<FakeNumberSpecification>> multipleFieldsValidators,
             IEnumerable<IFieldSpecification<FakeNumberSpecification>> fieldSpecifications,
             IStringParser<FakeNumberSpecification> stringParser = null)
-            : base(fieldValidators, fieldSpecifications, stringParser)
+            : base(fieldValidators, multipleFieldsValidators, fieldSpecifications, stringParser)
         { }
     }
 }

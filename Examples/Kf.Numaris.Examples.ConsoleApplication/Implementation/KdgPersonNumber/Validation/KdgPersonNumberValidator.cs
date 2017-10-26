@@ -11,9 +11,10 @@ namespace Kf.Numaris.Examples.ConsoleApplication.Implementation.KdgPersonNumber.
     {
         public KdgPersonNumberValidator(
             IEnumerable<IFieldValidator<KdgPersonNumberSpecification>> fieldValidators,
+            IEnumerable<IMultipleFieldsValidator<KdgPersonNumberSpecification>> multipleFieldsValidators,
             IEnumerable<IFieldSpecification<KdgPersonNumberSpecification>> fieldSpecifications,
             IStringParser<KdgPersonNumberSpecification> stringParser = null)
-            : base(fieldValidators, fieldSpecifications, stringParser)
+            : base(fieldValidators, multipleFieldsValidators, fieldSpecifications, stringParser)
         { }
     }
 }

@@ -25,6 +25,7 @@ namespace Kf.Numaris.Api.Tests.Validation.Numbers
                 fieldSpecifications: new List<IFieldSpecification<FakeNumberSpecification>> {
                     new FakeFieldTwoSpecification(), new FakeFieldOneSpecification()
                 },
+                multipleFieldsValidators: null,
                 fieldValidators: includeFieldValidators
                     ? new List<IFieldValidator<FakeNumberSpecification>> {
                         new FakeFieldOneValidator(), new FakeFieldTwoValidator()
