@@ -103,11 +103,11 @@ namespace Kf.Numaris.Implementations.InszNumber.Validation
             if (!Int32.TryParse(numberValue, out var number))
                 return IsNotValid<CheckDigitsFieldSpecification>(nameof(ValidationErrorMessages.CanOnlyConsistOfDigitsInRangeFrom0To9));
 
-            var numberMod97For1900 = number % 97;
+            var numberMod97For1900 = Math.Abs(97 - (number % 97));
             if (numberMod97For1900 == checkDigits)
                 return IsValid<CheckDigitsFieldSpecification>();
 
-            var numberMod97For2000 = Int32.Parse($"2{number}") % 97;
+            var numberMod97For2000 = Math.Abs(97 - (Int64.Parse($"2{number}") % 97));
             if (numberMod97For2000 == checkDigits)
                 return IsValid<CheckDigitsFieldSpecification>();
 

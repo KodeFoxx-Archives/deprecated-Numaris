@@ -32,7 +32,7 @@ namespace Kf.Numaris.Implementations.Tests.InszNumber
                 new DateOfBirthYearValidator(), new DateOfBirthMonthValidator(), new DateOfBirthDayValidator(),
                 new DayCounterValidator(), new CheckDigitsValidator()
             };
-        public static IEnumerable<IMultipleFieldsValidator<InszNumberSpecification>> MultupleFieldsValidators =
+        public static IEnumerable<IMultipleFieldsValidator<InszNumberSpecification>> MultipleFieldsValidators =
             new List<IMultipleFieldsValidator<InszNumberSpecification>> {
                 new CheckDigitsMultipleFieldsValidator()
             };
