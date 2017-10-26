@@ -12,9 +12,9 @@ namespace Kf.Numaris.Implementations.InszNumber.Formatting
     public sealed class InszNumberFormatter : NumberFormatter<InszNumberSpecification>
     {
         public InszNumberFormatter(
-            IEnumerable<IFieldFormatter<InszNumberSpecification>> fieldFormatters, 
-            IEnumerable<IFieldSpecification<InszNumberSpecification>> fieldSpecifications, 
-            IStringParser<InszNumberSpecification> stringParser = null) 
+            IEnumerable<IFieldFormatter<InszNumberSpecification>> fieldFormatters,
+            IEnumerable<IFieldSpecification<InszNumberSpecification>> fieldSpecifications,
+            IStringParser<InszNumberSpecification> stringParser = null)
             : base(fieldFormatters, fieldSpecifications, stringParser)
         { }
 
@@ -24,22 +24,22 @@ namespace Kf.Numaris.Implementations.InszNumber.Formatting
         {
             var formatted = _template;
 
-            foreach (var fieldFormatter in OrderedFieldFormatters.Select((ff, i) => (Formatter: ff, Index: i)))            
+            foreach (var fieldFormatter in OrderedFieldFormatters.Select((ff, i) => (Formatter: ff, Index: i)))
                 formatted = formatted
-                    .Replace($"{{{fieldFormatter.Index}}}", fieldFormatter.Formatter.Format(input[fieldFormatter.Index]));            
+                    .Replace($"{{{fieldFormatter.Index}}}", fieldFormatter.Formatter.Format(input[fieldFormatter.Index]));
 
             return formatted;
         }
     }
 
-    public abstract class NumberWithPaddedZeroesInFrontFormatter<TFieldSpecification> 
+    public abstract class FieldWithOnlyDigitsAndPaddedZeroesInFrontFormatter<TFieldSpecification>
         : FieldFormatter<TFieldSpecification, InszNumberSpecification>
-        where TFieldSpecification: IFieldSpecification<InszNumberSpecification>
+        where TFieldSpecification : IFieldSpecification<InszNumberSpecification>
     {
         protected int MaxLength { get; }
         protected char PaddingCharacter { get; }
 
-        protected NumberWithPaddedZeroesInFrontFormatter(int maxLength = 2, char paddingCharacter = '0')
+        protected FieldWithOnlyDigitsAndPaddedZeroesInFrontFormatter(int maxLength = 2, char paddingCharacter = '0')
         {
             MaxLength = maxLength;
             PaddingCharacter = paddingCharacter;
@@ -54,29 +54,29 @@ namespace Kf.Numaris.Implementations.InszNumber.Formatting
         }
     }
 
-    public sealed class DateOfBirthYearFormatter 
-        : NumberWithPaddedZeroesInFrontFormatter<DateOfBirthYearFieldSpecification>
-    {        
+    public sealed class DateOfBirthYearFormatter
+        : FieldWithOnlyDigitsAndPaddedZeroesInFrontFormatter<DateOfBirthYearFieldSpecification>
+    {
     }
 
     public sealed class DateOfBirthMonthFormatter
-        : NumberWithPaddedZeroesInFrontFormatter<DateOfBirthMonthFieldSpecification>
+        : FieldWithOnlyDigitsAndPaddedZeroesInFrontFormatter<DateOfBirthMonthFieldSpecification>
     {
     }
 
     public sealed class DateOfBirthDayFormatter
-        : NumberWithPaddedZeroesInFrontFormatter<DateOfBirthDayFieldSpecification>
+        : FieldWithOnlyDigitsAndPaddedZeroesInFrontFormatter<DateOfBirthDayFieldSpecification>
     {
     }
 
     public sealed class DayCounterFormatter
-        : NumberWithPaddedZeroesInFrontFormatter<DayCounterFieldSpecification>
+        : FieldWithOnlyDigitsAndPaddedZeroesInFrontFormatter<DayCounterFieldSpecification>
     {
         public DayCounterFormatter() : base(maxLength: 3) { }
     }
 
     public sealed class CheckDigitsFormatter
-        : NumberWithPaddedZeroesInFrontFormatter<CheckDigitsFieldSpecification>
+        : FieldWithOnlyDigitsAndPaddedZeroesInFrontFormatter<CheckDigitsFieldSpecification>
     {
     }
 }

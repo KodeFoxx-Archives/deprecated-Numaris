@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using Kf.Numaris.Api.Common;
 using Kf.Numaris.Api.Specifications.Field;
 using Kf.Numaris.Api.Validation.Fields;
@@ -26,7 +25,7 @@ namespace Kf.Numaris.Examples.ConsoleApplication.Implementation.KdgPersonNumber.
             if (!Int32.TryParse(checkDigitsValue, out var checkDigits))
                 return IsNotValid<CheckDigitsFieldSpecification>("Cannot consist of anything other than digits ranging from 0 to 9");
 
-            if(!Int32.TryParse(personNumberValue, out var personNumber))
+            if (!Int32.TryParse(personNumberValue, out var personNumber))
                 return IsNotValid<PersonNumberFieldSpecification>("Cannot consist of anything other than digits ranging from 0 to 9");
 
             var personNumberMod97 = personNumber % 97;

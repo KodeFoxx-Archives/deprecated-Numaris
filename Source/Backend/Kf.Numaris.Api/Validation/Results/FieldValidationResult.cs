@@ -12,10 +12,10 @@ namespace Kf.Numaris.Api.Validation.Results
         where TNumberSpecification : INumberSpecification
     {
         public override Identifier FieldSpecificationIdentifier
-            => Identifier.For<IFieldSpecification<TNumberSpecification>>(typeof(TFieldSpecification));        
+            => Identifier.For<IFieldSpecification<TNumberSpecification>>(typeof(TFieldSpecification));
 
-        public FieldValidationResult(bool isValid, string message = null)
-            : base(isValid, message)
+        public FieldValidationResult(bool isValid, string message = null, params string[] parameters)
+            : base(isValid, message, parameters)
         { }
     }
 }

@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
+﻿using System.Diagnostics;
 using Kf.Numaris.Api.Common;
 using Kf.Numaris.Api.Specifications.Field;
 using Kf.Numaris.Api.Specifications.Numbers;
@@ -20,13 +17,13 @@ namespace Kf.Numaris.Api.Validation.Fields
         public Identifier FieldSpecificationIdentifier
             => Identifier.For<IFieldSpecification<TNumberSpecification>>(typeof(TFieldSpecification));
 
-        public abstract IFieldValidationResult<TNumberSpecification> Validate(string input);        
+        public abstract IFieldValidationResult<TNumberSpecification> Validate(string input);
 
         protected IFieldValidationResult<TNumberSpecification> IsValid()
             => new FieldValidationResult<TFieldSpecification, TNumberSpecification>(true);
-        protected IFieldValidationResult<TNumberSpecification> IsValidWithWarning(string message)
-            => new FieldValidationResult<TFieldSpecification, TNumberSpecification>(true, message);
-        protected IFieldValidationResult<TNumberSpecification> IsNotValid(string message)
-            => new FieldValidationResult<TFieldSpecification, TNumberSpecification>(false, message);
+        protected IFieldValidationResult<TNumberSpecification> IsValidWithWarning(string message, params string[] parameters)
+            => new FieldValidationResult<TFieldSpecification, TNumberSpecification>(true, message, parameters);
+        protected IFieldValidationResult<TNumberSpecification> IsNotValid(string message, params string[] parameters)
+            => new FieldValidationResult<TFieldSpecification, TNumberSpecification>(false, message, parameters);
     }
 }

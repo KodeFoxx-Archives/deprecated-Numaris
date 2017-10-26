@@ -19,19 +19,21 @@ namespace Kf.Numaris.Api.Validation.Fields
         public IReadOnlyList<Identifier> FieldSpecificationIdentifiers
             => FieldSpecifications.Select(fs => fs.Identifier).ToList();
 
-        protected abstract IEnumerable<IFieldSpecification<TNumberSpecification>> FieldSpecifications { get; }            
+        protected abstract IEnumerable<IFieldSpecification<TNumberSpecification>> FieldSpecifications { get; }
 
         public abstract IFieldValidationResult<TNumberSpecification> Validate(IEnumerable<KeyValuePair<Identifier, string>> input);
 
         protected IFieldValidationResult<TNumberSpecification> IsValid<TFieldSpecification>()
             where TFieldSpecification : IFieldSpecification<TNumberSpecification>
             => new FieldValidationResult<TFieldSpecification, TNumberSpecification>(true);
-        protected IFieldValidationResult<TNumberSpecification> IsValidWithWarning<TFieldSpecification>(string message)
+        protected IFieldValidationResult<TNumberSpecification> IsValidWithWarning<TFieldSpecification>(string message, params string[] parameters)
             where TFieldSpecification : IFieldSpecification<TNumberSpecification>
-            => new FieldValidationResult<TFieldSpecification, TNumberSpecification>(true, message);
-        protected IFieldValidationResult<TNumberSpecification> IsNotValid<TFieldSpecification>(string message)
+            => new FieldValidationResult<TFieldSpecification, TNumberSpecification>(true, message, parameters);
+
+        protected IFieldValidationResult<TNumberSpecification> IsNotValid<TFieldSpecification>(string message,
+            params string[] parameters)
             where TFieldSpecification : IFieldSpecification<TNumberSpecification>
-            => new FieldValidationResult<TFieldSpecification, TNumberSpecification>(false, message);
+            => new FieldValidationResult<TFieldSpecification, TNumberSpecification>(false, message, parameters);
 
         protected string GetValueForField<TFieldSpecification>(IEnumerable<KeyValuePair<Identifier, string>> input)
             where TFieldSpecification : IFieldSpecification<TNumberSpecification>

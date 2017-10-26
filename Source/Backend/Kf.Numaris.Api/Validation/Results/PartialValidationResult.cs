@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
 using Kf.Numaris.Api.Common;
 
 namespace Kf.Numaris.Api.Validation.Results
@@ -14,11 +15,14 @@ namespace Kf.Numaris.Api.Validation.Results
         public bool IsValid { get; }
         public string Message { get; }
         public bool HasMessage => !String.IsNullOrWhiteSpace(Message);
+        public IReadOnlyList<string> Parameters { get; }
+        public bool HasParameters => Parameters.Count != 0;
 
-        public PartialValidationResult(bool isValid, string message = null)
+        public PartialValidationResult(bool isValid, string message = null, params string[] parameters)
         {
             IsValid = isValid;
             Message = message;
+            Parameters = parameters?.ToList() ?? new List<string>();
         }
     }
 }
