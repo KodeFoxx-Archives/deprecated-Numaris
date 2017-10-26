@@ -21,5 +21,15 @@ namespace Kf.Numaris.Api.Validation.Fields
         protected abstract IEnumerable<IFieldSpecification<TNumberSpecification>> FieldSpecifications { get; }
 
         public abstract IFieldValidationResult<TNumberSpecification> Validate(IEnumerable<KeyValuePair<Identifier, string>> input);
+
+        protected IFieldValidationResult<TNumberSpecification> IsValid<TFieldSpecification>()
+            where TFieldSpecification : IFieldSpecification<TNumberSpecification>
+            => new FieldValidationResult<TFieldSpecification, TNumberSpecification>(true);
+        protected IFieldValidationResult<TNumberSpecification> IsValidWithWarning<TFieldSpecification>(string message)
+            where TFieldSpecification : IFieldSpecification<TNumberSpecification>
+            => new FieldValidationResult<TFieldSpecification, TNumberSpecification>(true, message);
+        protected IFieldValidationResult<TNumberSpecification> IsNotValid<TFieldSpecification>(string message)
+            where TFieldSpecification : IFieldSpecification<TNumberSpecification>
+            => new FieldValidationResult<TFieldSpecification, TNumberSpecification>(false, message);
     }
 }
