@@ -42,18 +42,15 @@ namespace Kf.Numaris.Api.Validation.Numbers
         }
 
         public virtual IValidationResult Validate(string[] input)
-        {
-            var fieldValidators = OrderedFieldValidators.Select((fv, i) => fv.Validate(input[i]));
-            var multipleFieldsValidators = EvaluateMultipleFieldsValidators();
-            return new ValidationResult(fieldValidators.Concat(multipleFieldsValidators));
-        }
+            => new ValidationResult(
+                    OrderedFieldValidators.Select((fv, i) => fv.Validate(input[i]))
+                    .Concat(EvaluateMultipleFieldsValidators())
+               );        
 
         public virtual IValidationResult Validate(string input)
             => Validate(StringParser != null ? StringParser.Parse(input) : new[] { input });
 
         private IEnumerable<IPartialValidationResult> EvaluateMultipleFieldsValidators()
-        {
-            return new List<IPartialValidationResult>();
-        }
+            => new List<IPartialValidationResult>();
     }
 }
