@@ -30,6 +30,6 @@ namespace Kf.Numaris.Api.Tests.Common
             });
 
             Assert.Equal("The interfaces supported are INumberSpecification.", exception.Message);
-        }
+        }        
     }
 }

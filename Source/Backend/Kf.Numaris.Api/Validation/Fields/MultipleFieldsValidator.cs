@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using Kf.Numaris.Api.Common;
@@ -18,7 +19,7 @@ namespace Kf.Numaris.Api.Validation.Fields
         public IReadOnlyList<Identifier> FieldSpecificationIdentifiers
             => FieldSpecifications.Select(fs => fs.Identifier).ToList();
 
-        protected abstract IEnumerable<IFieldSpecification<TNumberSpecification>> FieldSpecifications { get; }
+        protected abstract IEnumerable<IFieldSpecification<TNumberSpecification>> FieldSpecifications { get; }            
 
         public abstract IFieldValidationResult<TNumberSpecification> Validate(IEnumerable<KeyValuePair<Identifier, string>> input);
 
@@ -31,5 +32,9 @@ namespace Kf.Numaris.Api.Validation.Fields
         protected IFieldValidationResult<TNumberSpecification> IsNotValid<TFieldSpecification>(string message)
             where TFieldSpecification : IFieldSpecification<TNumberSpecification>
             => new FieldValidationResult<TFieldSpecification, TNumberSpecification>(false, message);
+
+        protected string GetValueForField<TFieldSpecification>(IEnumerable<KeyValuePair<Identifier, string>> input)
+            where TFieldSpecification : IFieldSpecification<TNumberSpecification>
+            => input.ToList().GetValueForField<TFieldSpecification, TNumberSpecification>();
     }
 }

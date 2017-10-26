@@ -7,8 +7,11 @@ namespace Kf.Numaris.Api.Common
     [DebuggerDisplay("{Name} ({Id})")]
     public sealed class Identifier
     {
-        internal static Identifier For<TSupportedType>(Type type)
+        public static Identifier For<TSupportedType>(Type type = null)
         {
+            if(type == null)
+                return new Identifier(typeof(TSupportedType));            
+
             if (type.GetInterfaces().Contains(typeof(TSupportedType)))
                 return new Identifier(type);
 
