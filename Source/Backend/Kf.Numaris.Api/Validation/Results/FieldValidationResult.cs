@@ -1,9 +1,11 @@
-﻿using Kf.Numaris.Api.Common;
+﻿using System.Diagnostics;
+using Kf.Numaris.Api.Common;
 using Kf.Numaris.Api.Specifications.Field;
 using Kf.Numaris.Api.Specifications.Numbers;
 
 namespace Kf.Numaris.Api.Validation.Results
 {
+    [DebuggerDisplay("{Identifier.Name} for field '{FieldSpecificationIdentifier.Name}'")]
     public sealed class FieldValidationResult<TFieldSpecification, TNumberSpecification>
         : PartialValidationResult, IFieldValidationResult<TNumberSpecification>
         where TFieldSpecification : IFieldSpecification<TNumberSpecification>

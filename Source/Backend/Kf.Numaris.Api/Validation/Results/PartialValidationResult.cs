@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Diagnostics;
 using Kf.Numaris.Api.Common;
 
 namespace Kf.Numaris.Api.Validation.Results
 {
+    [DebuggerDisplay("{Identifier.Name} {IsValid} {Message}")]
     public class PartialValidationResult : IPartialValidationResult
     {
         public Identifier Identifier => Identifier.For<PartialValidationResult>(GetType());

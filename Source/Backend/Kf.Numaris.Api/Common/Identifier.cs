@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace Kf.Numaris.Api.Common
 {
-    [DebuggerDisplay("Name (Id)")]
+    [DebuggerDisplay("{Name} ({Id})")]
     public sealed class Identifier
     {
         internal static Identifier For<TSupportedType>(Type type)

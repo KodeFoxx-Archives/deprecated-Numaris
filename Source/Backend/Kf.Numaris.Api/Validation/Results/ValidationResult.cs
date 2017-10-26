@@ -2,7 +2,7 @@
 using System.Linq;
 
 namespace Kf.Numaris.Api.Validation.Results
-{
+{    
     public sealed class ValidationResult : IValidationResult
     {
         public bool IsValid => PartialResults.All(pr => pr.IsValid);

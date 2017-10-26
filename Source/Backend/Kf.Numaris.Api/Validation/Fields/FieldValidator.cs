@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using Kf.Numaris.Api.Common;
 using Kf.Numaris.Api.Specifications.Field;
@@ -8,6 +9,7 @@ using Kf.Numaris.Api.Validation.Results;
 
 namespace Kf.Numaris.Api.Validation.Fields
 {
+    [DebuggerDisplay("{Identifier.Name} for field '{FieldSpecificationIdentifier.Name}'")]
     public abstract class FieldValidator<TFieldSpecification, TNumberSpecification> : IFieldValidator<TNumberSpecification>
         where TFieldSpecification : IFieldSpecification<TNumberSpecification>
         where TNumberSpecification : INumberSpecification
