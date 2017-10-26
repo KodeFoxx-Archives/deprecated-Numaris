@@ -1,0 +1,8 @@
+﻿<Application x:Class="Kf.Numaris.Presentation.WpfClient.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Kf.Numaris.Presentation.WpfClient">
+    <Application.Resources>
+
+    </Application.Resources>
+</Application>

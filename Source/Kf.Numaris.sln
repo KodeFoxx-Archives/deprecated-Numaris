@@ -43,6 +43,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kf.Numaris.Implementations.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kf.Numaris.Implementations.InszNumber", "Implementations\Kf.Numaris.Implementations.InszNumber\Kf.Numaris.Implementations.InszNumber.csproj", "{A6FECDD9-4288-4276-B36D-4700C12FF703}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{E2F07EF4-7E0E-41DB-96A5-AAA1C3D7051E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kf.Numaris.Presentation.WpfClient", "Presentation\Kf.Numaris.Presentation.WpfClient\Kf.Numaris.Presentation.WpfClient.csproj", "{6F838998-C443-428C-96DA-F3E699C3B50C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -77,6 +81,10 @@ Global
 		{A6FECDD9-4288-4276-B36D-4700C12FF703}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A6FECDD9-4288-4276-B36D-4700C12FF703}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A6FECDD9-4288-4276-B36D-4700C12FF703}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F838998-C443-428C-96DA-F3E699C3B50C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F838998-C443-428C-96DA-F3E699C3B50C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F838998-C443-428C-96DA-F3E699C3B50C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F838998-C443-428C-96DA-F3E699C3B50C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -92,6 +100,8 @@ Global
 		{C02832F3-8236-4130-9FDB-A507C084D584} = {2437A1B0-663B-43C5-9005-748000B49DD8}
 		{309D82B8-5F4C-4D1C-B680-8DE4FF522117} = {2437A1B0-663B-43C5-9005-748000B49DD8}
 		{A6FECDD9-4288-4276-B36D-4700C12FF703} = {2437A1B0-663B-43C5-9005-748000B49DD8}
+		{E2F07EF4-7E0E-41DB-96A5-AAA1C3D7051E} = {FD156518-0789-4B32-B21D-521167251A2B}
+		{6F838998-C443-428C-96DA-F3E699C3B50C} = {E2F07EF4-7E0E-41DB-96A5-AAA1C3D7051E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {71302D3A-AB57-4A51-800F-9973B307F8C4}

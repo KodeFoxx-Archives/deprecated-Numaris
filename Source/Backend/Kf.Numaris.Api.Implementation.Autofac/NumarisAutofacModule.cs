@@ -20,6 +20,8 @@ namespace Kf.Numaris.Api.Implementation.Autofac
 
         protected void LoadGenericNumarisTypes(ContainerBuilder builder)
         {
+            builder.RegisterAssemblyTypesWithClassImplementations<TNumberSpecification, INumberSpecification>();
+
             builder.RegisterAssemblyTypesWithClassImplementations<TNumberSpecification, IFieldSpecification<TNumberSpecification>>();
 
             builder.RegisterAssemblyTypesWithClassImplementations<TNumberSpecification, INumberFormatter<TNumberSpecification>>();
@@ -29,7 +31,7 @@ namespace Kf.Numaris.Api.Implementation.Autofac
             builder.RegisterAssemblyTypesWithClassImplementations<TNumberSpecification, IFieldValidator<TNumberSpecification>>();
             builder.RegisterAssemblyTypesWithClassImplementations<TNumberSpecification, IMultipleFieldsValidator<TNumberSpecification>>();
 
-            builder.RegisterAssemblyTypesWithClassImplementations<TNumberSpecification, IStringParser<TNumberSpecification>>();            
+            builder.RegisterAssemblyTypesWithClassImplementations<TNumberSpecification, IStringParser<TNumberSpecification>>();
         }
 
         protected virtual void LoadSpecificTypes(ContainerBuilder builder)
