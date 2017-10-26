@@ -24,9 +24,18 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Frontend", "Frontend", "{24
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Examples", "Examples", "{660705F0-D3FF-497E-A4E1-EA7CE8BF76FC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kf.Numaris.Api.Implementation.Autofac", "Backend\Kf.Numaris.Api.Implementation.Autofac\Kf.Numaris.Api.Implementation.Autofac.csproj", "{C35CCB78-95A2-491D-B038-2164955E856F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kf.Numaris.Api.Implementation.Autofac", "Backend\Kf.Numaris.Api.Implementation.Autofac\Kf.Numaris.Api.Implementation.Autofac.csproj", "{C35CCB78-95A2-491D-B038-2164955E856F}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kf.Numaris.Examples.ConsoleApplication", "..\Examples\Kf.Numaris.Examples.ConsoleApplication\Kf.Numaris.Examples.ConsoleApplication.csproj", "{1EC1D9C6-7868-4496-8309-9BD3E4D8D645}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Resources", "Resources", "{B755973C-5128-47CB-B404-0BA72B2B71BE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Images", "Images", "{47123ADB-0609-412D-956E-4E173F99D5AB}"
+	ProjectSection(SolutionItems) = preProject
+		..\Resources\Images\logo-numaris.jpg = ..\Resources\Images\logo-numaris.jpg
+		..\Resources\Images\logo-numaris.png = ..\Resources\Images\logo-numaris.png
+		..\Resources\Images\logo-numaris.psd = ..\Resources\Images\logo-numaris.psd
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -61,6 +70,7 @@ Global
 		{2437A1B0-663B-43C5-9005-748000B49DD8} = {FD156518-0789-4B32-B21D-521167251A2B}
 		{C35CCB78-95A2-491D-B038-2164955E856F} = {F3175999-E6D9-4DA3-BBD7-94DBACB95B7B}
 		{1EC1D9C6-7868-4496-8309-9BD3E4D8D645} = {660705F0-D3FF-497E-A4E1-EA7CE8BF76FC}
+		{47123ADB-0609-412D-956E-4E173F99D5AB} = {B755973C-5128-47CB-B404-0BA72B2B71BE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {71302D3A-AB57-4A51-800F-9973B307F8C4}
