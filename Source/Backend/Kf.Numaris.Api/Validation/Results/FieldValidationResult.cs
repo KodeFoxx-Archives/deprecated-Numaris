@@ -11,8 +11,8 @@ namespace Kf.Numaris.Api.Validation.Results
         where TFieldSpecification : IFieldSpecification<TNumberSpecification>
         where TNumberSpecification : INumberSpecification
     {
-        public Identifier FieldSpecificationIdentifier
-            => Identifier.For<IFieldSpecification<TNumberSpecification>>(typeof(TFieldSpecification));
+        public override Identifier FieldSpecificationIdentifier
+            => Identifier.For<IFieldSpecification<TNumberSpecification>>(typeof(TFieldSpecification));        
 
         public FieldValidationResult(bool isValid, string message = null)
             : base(isValid, message)
